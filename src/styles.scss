@@ -1,1 +1,90 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// create variables here
+:root {
+    --rs-gutter: 4rem;
+    --id-vt-spacing: 4rem;
+    --id-primary-color: #f7b20c;
+    --id-black: #121617;
+    --id-secondary: #ed5f00;
+    --id-white: #fafcfc;
+    --id-accent: #ef4123;
+}
+
+
+input {
+    background:transparent;
+    border-radius: 1rem !important;
+    border-top-left-radius: 255px 35px !important;
+    border-top-right-radius: 35px 225px !important;
+    border-bottom-right-radius: 225px 35px !important;
+    border-bottom-left-radius: 25px 255px !important;
+
+    &.drawy-lines {
+        border:solid 3px var(--id-black);
+     }
+}
+
+button {
+    height: 3.5rem;
+    border-radius: .25rem !important;
+    border-top-left-radius: 255px 15px !important;
+    border-top-right-radius: 15px 225px !important;
+    border-bottom-right-radius: 225px 15px !important;
+    border-bottom-left-radius: 15px 255px !important;
+    background-color: var(--id-primary-color) !important;
+    color: var(--id-black) !important;
+
+    .no-border {
+        border: solid 0px var(--id-black);
+    }
+}
+
+p {
+    
+    a {
+        color: var(--id-accent) !important;
+        text-decoration: none !important;
+    }
+    a:hover {
+    opacity: .8;
+    }
+}
+
+ul {
+  &.socials {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      padding: 0rem;
+
+      li {
+          margin: 0rem .725rem;
+      }
+
+      li:nth-child(1) {
+          margin-left: 0rem;
+      }
+
+      li:hover {
+          cursor: pointer;
+          transform: scale(.9);
+          animation-name: grow;
+          animation-duration: 1s;
+          animation-delay: .01s;
+          -o-animation-timing-function: ease-in-out;
+        //   animation-direction: alternate;
+      }
+  }  
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    
+    to {
+        transform: scale(.9);
+    }
+}

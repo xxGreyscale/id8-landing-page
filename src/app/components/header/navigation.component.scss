@@ -1,0 +1,18 @@
+
+
+.navbar {
+    position: fixed;
+    width: 100%;
+}
+.nav-container {
+    width: 100%;
+    padding: 0rem var(--rs-gutter);
+    display: flex;
+}
+
+.brand-section {
+    max-width: 48vw;
+    // min-width: 48vw;
+    // max-width: 48vw;
+    padding: 0rem;
+}
