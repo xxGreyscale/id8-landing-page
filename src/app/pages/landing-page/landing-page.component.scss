@@ -8,6 +8,7 @@
         margin-right: unset !important;
         padding-right: unset;
         flex-wrap: wrap;
+        overflow: hidden;
     }
 }
 
@@ -104,4 +105,15 @@
         padding-bottom: 0rem;
     }
     
+}
+
+.bg-carousel-absolute {
+    background-color: var(--id-black);
+    position: absolute;
+    border-radius: 0rem 0rem 0rem 12rem;
+    z-index: -1;
+    height: 100%;
+    width: 40%;
+    top: 0;
+    right: 0;
 }
