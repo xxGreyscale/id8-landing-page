@@ -91,7 +91,7 @@
         padding: var(--id-vt-spacing) var(--rs-gutter);
         // max-width: 48vw;
         input {
-            width: 100%;
+            width: 75%;
         }
     }
 
@@ -104,4 +104,56 @@
         padding-bottom: 0rem;
     }
     
+}
+
+
+
+// new section here and a new way to write breakpoints
+.second-fold {
+    margin: 8rem 0rem;
+    .page-mockup {
+        flex-direction: row;
+        flex-wrap: wrap;
+        .mockup-bg {
+            background-color: var(--id-primary-color);
+            border-radius: 0rem .5rem .5rem 0rem;
+            box-shadow: 4px 4px 10px var(--id-primary-shadow) ;
+            width: 100%;
+            height: fit-content;
+            padding: 6.5rem 0rem;
+        }
+    
+        @media only screen and(min-width: 1164px) { 
+            .mockup-bg {
+                width: 75%;
+            }
+        }
+    }
+
+
+    .content {
+        padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*1);
+        padding-right: calc(var(--rs-gutter)*1.5);
+
+        p {
+            width: 100%;
+        }
+
+
+        .feature-container {
+            display: flex;
+            flex-direction: row;
+            margin: 3rem 0rem;
+            .feature-illustration {
+                width: fit-content;
+                max-width: 25%;
+            }
+
+            .feature-ico {
+                border-radius: 100%;
+                background-color: var(--id-primary-shadow);
+                padding: 1rem 0rem;
+            }
+        }
+    }
 }
