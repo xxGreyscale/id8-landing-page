@@ -15,6 +15,7 @@
 
 .rs-container {
     padding-top: 134.844px;
+    width: 64%;
 }
 
 
@@ -89,19 +90,21 @@
     }
 
     .form-area {
-        padding: var(--id-vt-spacing) var(--rs-gutter);
+        padding: calc(var(--id-vt-spacing)*1.5) calc(var(--rs-gutter)*0);
+        padding-right: calc(var(--rs-gutter)*1.2);
         // max-width: 48vw;
         input {
-            width: 100%;
+            width: 88%;
         }
     }
 
     .carousel-fold {
-        border-radius: 0rem 0rem 0rem 12rem;
+        border-radius: 0rem 0rem 1.5rem 12rem;
     }
 
     .carousel-container {
-        padding: calc(var(--id-vt-spacing)*.5) var(--rs-gutter);
+        padding: calc(var(--id-vt-spacing)*.275) calc(var(--rs-gutter)*.5);
+        padding-left: calc(var(--rs-gutter)*.725);
         padding-bottom: 0rem;
     }
     

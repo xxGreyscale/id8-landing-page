@@ -4,9 +4,11 @@
     position: fixed;
     width: 100%;
 }
+
 .nav-container {
     width: 100%;
-    padding: 0rem var(--rs-gutter);
+    // padding: calc(var(--id-vt-spacing)*0) calc(var(--rs-gutter)*1.2);
+    padding-right: calc(var(--rs-gutter)*1);
     display: flex;
 }
 
