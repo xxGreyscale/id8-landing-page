@@ -1,4 +1,4 @@
-.fold {
+.first.fold {
     width: 100%;
 
     .fold-container {
@@ -7,21 +7,23 @@
         flex-basis: content;
         margin-right: unset !important;
         padding-right: unset;
-        flex-wrap: wrap;
-        overflow: hidden;
+        flex-direction: column-reverse;
+    }
+
+    .upper-fold {
+        padding: 0rem;
     }
 }
 
 
 .rs-container {
     padding-top: 134.844px;
-    width: 64%;
+    width: 100%;
 }
 
 
 .form-area {
     padding: var(--id-vt-spacing) calc(var(--rs-gutter)*.5);
-    // max-width: 48vw;
     input {
         width: 100%;
         height: 3.5rem;
@@ -37,19 +39,15 @@
     }
 }
 
-.carousel-fold {
-    padding-top: 134.844px;
-    background-color: var(--id-black);
-    color: var(--id-white);
-    height: fit-content;
-    border-radius: 0rem 0rem 0rem 0rem;
-}
-
 .carousel-container {
     display: flex;
+    width: 100%;
+    background-color: var(--id-black);
+    color: var(--id-white);
     justify-content: flex-end;
     margin-left: auto;
     padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*.5);
+    padding-top: calc(var(--id-vt-spacing)*1);
     padding-bottom: 0rem;
 
     .carousel-img {
@@ -57,18 +55,21 @@
         object-fit: contain;
         background-repeat: no-repeat;
         object-position: right top;
-        height: 560px;
+        overflow-y: hidden;
+        overflow-x: hidden;
         img {
             display: block;
             margin-left: auto;
         }
     }
+
+
 }
 
 
-@media only screen and(max-width: 1023.98px) { 
+@media only screen and(max-width: 737.98px) { 
     .carousel-fold {
-        padding-top: 0rem;
+        padding-top: 4rem;
     }
     .carousel-container {
 
@@ -84,28 +85,60 @@
 }
 
 
+@media only screen and(min-width: 767.98px) { 
+    .first.fold {
+        .fold-container {
+            flex-direction: row;
+            flex-wrap: nowrap !important;
+        }
+    }
+}
+
+@media only screen and(min-width: 765px) { 
+    .first.fold {
+        .container {
+            max-width: 1440px !important;
+        }
+    }
+    .carousel-container {
+        border-radius: 0rem 0rem 1.5rem 12rem;
+        padding: calc(var(--id-vt-spacing)*.275) calc(var(--rs-gutter)*.5);
+        padding-left: calc(var(--rs-gutter)*.725);
+        padding-bottom: 0rem;
+
+        .carousel-row {
+            flex-direction: column-reverse !important;
+        }
+    }
+}
+
+
+
+
 @media only screen and(min-width: 1164px) { 
-    .fold-container {
-        flex-wrap: nowrap !important;
+
+    .rs-container {
+        width: 64%;
     }
 
     .form-area {
-        padding: calc(var(--id-vt-spacing)*1.5) calc(var(--rs-gutter)*0);
+        padding: calc(var(--id-vt-spacing)*1.5) calc(var(--rs-gutter)*1);
         padding-right: calc(var(--rs-gutter)*1.2);
         // max-width: 48vw;
         input {
             width: 88%;
         }
     }
-
-    .carousel-fold {
-        border-radius: 0rem 0rem 1.5rem 12rem;
-    }
-
+    
     .carousel-container {
+        border-radius: 0rem 0rem 1.5rem 12rem;
         padding: calc(var(--id-vt-spacing)*.275) calc(var(--rs-gutter)*.5);
         padding-left: calc(var(--rs-gutter)*.725);
         padding-bottom: 0rem;
+
+        .carousel-row {
+            flex-direction: row-reverse !important;
+        }
     }
     
 }
@@ -125,8 +158,13 @@
 
 
 // new section here and a new way to write breakpoints
-.second-fold {
+.second.fold, .third.fold {
     margin: 8rem 0rem;
+    .fold-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     .page-mockup {
         flex-direction: row;
         flex-wrap: wrap;
@@ -138,20 +176,72 @@
             height: fit-content;
             padding: 6.5rem 0rem;
             padding-left: 2rem;
+            // display: flex;
+            // justify-content: flex-end;
+            img {
+                width: 100%;
+            }
         }
     
-        @media only screen and(min-width: 1164px) { 
+        @media only screen and (min-width: 767.98px) { 
+                // flex-direction: column;
+                flex-wrap: wrap;
+                .mockup-bg {
+                    width: 100%;
+                }
+
+        }
+
+        @media only screen and (min-width: 1020.98px) { 
+            flex-wrap: nowrap;
+                .mockup-bg {
+                    width: 70%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: unset !important;
+                        // max-width: 120%;
+                        margin: auto 0rem;
+                        display: block;
+                        max-width: 400px;
+                    }
+                }
+        }
+
+        @media only screen and (min-width: 1400.98px) {
             .mockup-bg {
-                width: 75%;
+                img {
+                    width: unset !important;
+                    // max-width: 120%;
+                    margin: auto 0rem;
+                    display: block;
+                    max-width: unset !important;
+                }
             }
         }
     }
 
+    @media only screen and (min-width: 767.98px) {
+        .page-mockup {
+            width: 100%;
+        }
+    }
+
+    @media only screen and (min-width: 1020.98px) {
+        .fold-container {
+            flex-wrap: nowrap;
+        }
+        .page-mockup {
+            width: 70%;
+        }
+    }
+
+
 
     .content {
-        padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*1);
-        padding-right: calc(var(--rs-gutter)*1.5);
-
+        padding: calc(var(--id-vt-spacing)*.275) calc(var(--rs-gutter)*.275);
         p {
             width: 100%;
         }
@@ -160,10 +250,16 @@
         .feature-container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             margin: 3rem 0rem;
+            
             .feature-illustration {
-                width: fit-content;
-                max-width: 25%;
+                width: 85%;
+                max-width: 80%;
+                img {
+                    max-width: 75%;
+                    margin: 1rem 0rem;
+                }
             }
 
             .feature-ico {
@@ -172,12 +268,54 @@
                 padding: 1rem 0rem;
             }
         }
+
+        @media only screen and (min-width: 760.98px){
+            .feature-container {
+                flex-wrap: nowrap;
+                .feature-illustration {
+                    width: 100%;
+                    max-width: 100%;
+                    img {
+                        max-width: 100%;
+                        margin: 0rem 0rem;
+                    }
+                }
+            }
+            
+        }
+
+
+        @media only screen and (min-width: 1164px) {
+            .feature-container {
+                // flex-wrap: wrap;
+                flex-direction: row;
+                .feature-illustration {
+                    width: fit-content;
+                    max-width: 25%;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 767.98px) {
+        .content {
+            padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*.5);
+        }
+        
+    }
+    @media only screen and (min-width: 1400){
+        .content {
+            padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*1);
+            padding-right: calc(var(--rs-gutter)*1.5);
+        }
     }
 }
 
 
+
+
 @media only screen and(min-width: 1400px) {
-    .second-fold {
+    .second.fold, .third.fold {
         max-width: 1440px !important;
         margin: 0rem auto;
     }
@@ -186,10 +324,41 @@
 
 
 // third fold
-.third-fold {
-    img {
-        margin: 0rem 2.5rem;
+.third.fold {
+    max-width: 1440px;
+
+    .fold-container {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    
+    .patners-logo {
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        img {
+            margin: 0rem 1.5rem;
+        }
+    }
+
+
+    @media only screen and(min-width: 1024px) {
+        .fold-container {
+            justify-content: center;
+
+        }
+
+        .patners-logo {
+            justify-content: center;
+            img {
+                margin: 0rem 2.5rem;
+            }
+        }
     }
 }
+
 
 
