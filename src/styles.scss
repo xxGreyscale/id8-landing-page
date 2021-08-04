@@ -13,11 +13,11 @@
 :root {
     --rs-gutter: 4rem;
     --id-vt-spacing: 4rem;
-    --id-primary-color: #f7b20c;
+    --id-primary-color: #f7b20c !important;
     --id-primary-shadow: #f7b10c70;
-    --id-black: #121617;
+    --id-black: #121617 !important;
     --id-secondary: #ed5f00;
-    --id-white: #fafcfc;
+    --id-white: #fafcfc !important;
     --id-accent: #ef4123;
     --id8-primary-font: Proxima Nova LT, Sans Serif;
     --id8-secondary-font: Alma Sans, Helvetica, sans-serif
