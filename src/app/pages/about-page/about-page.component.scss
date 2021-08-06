@@ -1,0 +1,86 @@
+
+
+img.carousel-image, .custom-bg {
+    // min-width: calc(90vw/2);
+    object-position: right center;
+    // width: calc(90vw - 1.25rem);
+    transform: scaleX(-1);
+    position: absolute; 
+    object-fit: contain;
+    top: 2rem;
+    z-index: -1;
+    height: 900px;
+    left: 0;
+}
+
+.about::before {
+    content: '';
+    background-color: var(--id-white);
+    height: calc(752px + 2rem);
+    top: 0;
+    display: block;
+    position: absolute;
+    min-width: calc(90vw/2 - 2rem);
+    object-fit: contain;
+    z-index: -1;
+    left: 0rem;
+    background-size: cover;
+
+}
+
+.custom-bg {
+    top: 0rem;
+    background-color: var(--id-white);
+    width: calc(100vw/2 - 6rem);
+    height: calc(900px - 6rem);
+    border-radius: .25rem;
+}
+
+.carousel-title {
+    background-image: url('../../../assets/svg/blob.svg');
+    background-repeat: no-repeat;
+    // width: 100%;
+    // height: 100%;
+    position: relative;
+    // z-index: -1;
+    background-size: 100% 100%;
+    display: block;
+    padding: 6.5rem 3rem;
+    object-fit: contain;
+    
+    * {
+        margin-right: auto; 
+        color: var(--id-white) !important;
+    }
+}
+
+.carousel-title::before {
+    content: "";
+    background: url('../../../assets/img/molecule.png') no-repeat 0 0;
+    height: 752px;
+    top: -14rem;
+    display: block;
+    position: absolute;
+    width: inherit;
+    margin-left: 0rem;
+    transform: scaleX(-1);
+    object-fit: contain;
+    left: -3rem;
+    background-size: cover;
+}
+
+.about.content {
+    padding: 15rem 0rem;
+    
+}
+
+.about-carousel {
+    // background-color: var(--id-white);
+    min-width: calc(80vw/2);
+    // z-index: -1;
+}
+
+.carousel-title {
+
+}
+
