@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ComponentsModule } from './components/components.module';
+import { HttpClientModule } from '@angular/common/http'
+import { NewsService } from './services/news/news.service';
 
 @NgModule({
   declarations: [
@@ -13,10 +13,13 @@ import { ComponentsModule } from './components/components.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ComponentsModule,    
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    NewsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ img.carousel-image, .custom-bg {
     left: 0;
 }
 
-.about::before {
+.about:not(.about.content):before {
     content: '';
     background-color: var(--id-white);
     height: calc(752px + 2rem);
@@ -25,6 +25,10 @@ img.carousel-image, .custom-bg {
     z-index: -1;
     left: 0rem;
     background-size: cover;
+    border-top-left-radius: 40px 25px;
+    border-top-right-radius: 150px 100px;
+    border-bottom-right-radius: 40px 150px;
+    border-bottom-left-radius: 50px 40px;
 
 }
 
@@ -57,7 +61,7 @@ img.carousel-image, .custom-bg {
 .carousel-title::before {
     content: "";
     background: url('../../../assets/img/molecule.png') no-repeat 0 0;
-    height: 752px;
+    height: 768px;
     top: -14rem;
     display: block;
     position: absolute;
@@ -65,7 +69,7 @@ img.carousel-image, .custom-bg {
     margin-left: 0rem;
     transform: scaleX(-1);
     object-fit: contain;
-    left: -3rem;
+    left: -2rem;
     background-size: cover;
 }
 
@@ -78,9 +82,61 @@ img.carousel-image, .custom-bg {
     // background-color: var(--id-white);
     min-width: calc(80vw/2);
     // z-index: -1;
+
+    @media only screen and (min-width: 1920px) {
+        min-width: 30vw;
+    }
 }
 
 .carousel-title {
 
+}
+
+
+
+.news-header {
+    padding: 1.275rem 0rem;
+    border-bottom: 1px solid #70707016;
+
+    .news-nav {
+        align-self: center;
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        margin: auto 0rem;
+    }
+
+    .news-nav-item {
+        padding: 1rem 1.275rem;
+        font-size: .85em;
+        font-weight: 700;
+        color: var(--id-black);
+        opacity: .4;
+    }
+
+    .news-nav-item:hover {
+        opacity: .7;
+        cursor: pointer;
+    }
+
+    .news-nav-item.active {
+        opacity: 1;
+        background-color: var(--id-secondary);
+        padding: 1rem 1.5rem;
+        color: var(--id-white);
+        border-top-left-radius: 100px 50px;
+        border-top-right-radius: 100px 200px ;
+        border-bottom-right-radius: 100px 50px;
+        border-bottom-left-radius: 100px 200px;
+    }
+
+    .news-nav-item:nth-last-child(1) {
+        padding-right: 0rem;
+    }
+}
+
+.tiles {
+    display: grid;
+    
 }
 
