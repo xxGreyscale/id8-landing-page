@@ -156,7 +156,9 @@ img.carousel-image, .custom-bg {
 }
 
 .tile-item {
-    min-height: 15rem;
+    min-height: 18rem;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 15, 0.4);
 }
 
 .news-container {
@@ -230,6 +232,38 @@ img.carousel-image, .custom-bg {
         }
     }
     
+}
+
+.progress-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8rem;
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+
+        div {
+            margin: 0rem .725rem;
+            transition: all 100ms ease-in;
+            
+            img {
+                border-radius: 50%;
+                box-shadow: 0px 0px 0px rgba(0, 0, 15, 0);
+                cursor: pointer;
+                transform: scale(1.3);
+                &:hover {
+                    transition: all 100ms ease-in;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 15, 0.2);
+                }
+            }
+        }
+
+        div:not(:nth-child(1)) {
+            margin-right: 0rem;
+        }
+    }
 }
 
 
