@@ -15,6 +15,37 @@ section:first-child {
 }
 
 
+::ng-deep {
+    .main-title {
+        font-size: calc(1.5em + 2.75vw) !important;
+        // opacity: 0;
+        // transform: translateY(-3rem);
+        // animation: fadeInUp 3s ease-in-out forwards;
+    }
+
+    .main-title .changing-text {
+        display: block;
+        position: relative;
+        height: inherit;
+        width: inherit;
+        opacity: 0;
+        transform: translateY(-.725rem);
+        animation: fadeInUp 1.5s ease-in forwards;
+    }
+}
+
+@keyframes fadeInUp {
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(.725rem);
+        opacity: 0;
+    }
+}
+
 
 
 
