@@ -143,15 +143,27 @@ img.carousel-image, .custom-bg {
 
 .tiles {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    --n: 4;
+    grid-column: 1 / -1;
+    overflow-x: auto;
+
+    // grid-template-columns: auto auto auto auto;
+    grid-template-columns: 10px repeat(var(--total), calc(50% - var(--gutter) * 2)) 10px;
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
     grid-gap: 1rem;
+}
+
+.tile-item {
+    min-height: 15rem;
 }
 
 .news-container {
     position: relative;
     z-index: 0;
     cursor: pointer;
-    height: inherit;
+    height: 100%;
 
     .img-container {
         position: relative;
