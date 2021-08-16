@@ -30,7 +30,7 @@ section:first-child {
         width: inherit;
         opacity: 0;
         transform: translateY(-.725rem);
-        animation: fadeInUp 1.5s ease-in forwards;
+        animation: fadeInUp 2s ease-in forwards;
     }
 }
 
@@ -71,7 +71,7 @@ section:first-child {
 
 
 .rs-container {
-    // padding-top: 134.844px;
+    // padding-top: 184.844px;
     width: 100%;
 }
 
@@ -224,7 +224,7 @@ section:first-child {
     
     .carousel-container {
         border-radius: 0rem 0rem 1rem 12rem;
-        padding: calc(var(--id-vt-spacing)*1.5) calc(var(--rs-gutter)*.5);
+        padding: calc(var(--id-vt-spacing)*2) calc(var(--rs-gutter)*.5);
         padding-left: calc(var(--rs-gutter)*.725);
         padding-bottom: 0rem;
         padding-right: 0rem;

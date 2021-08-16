@@ -18,6 +18,9 @@ export class LandingPageComponent implements OnInit {
   currentTitle = this.titles[this.currentIndex];
   heading: any;
 
+  carousel: any;
+  carouselContent: any; 
+
 
   // function
   changeTitle = () => {
@@ -38,6 +41,22 @@ export class LandingPageComponent implements OnInit {
   
   ngOnInit(): void {
     this.heading = new BehaviorSubject(this.titles[this.currentIndex]);
+    this.carousel = [
+      {
+        content: 
+        `Take you innovative business idea to the next level and join tailored programs
+         that include access to exclusive development support dedicated workshops and mentors`,
+        image: 'assets/img/kid-light.png'
+
+      },
+      {
+        content: 
+        `A space connecting people & ideas to business resources;
+         promoting collaboration and sharing of collective knowledge to support your journey.`,
+        image: 'assets/img/kid-light.png'
+
+      }
+    ]
   }
 
 }
