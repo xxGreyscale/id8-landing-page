@@ -57,13 +57,10 @@
 
                         <div class="carousel-img mt-auto w-100">
                             <!-- its a background image -->
-                            <img class="mt-auto" src="assets/img/kid.png">
+                            <img class="mt-auto" [src]='currentCarousel.image'>
                         </div>
                         <div class="slider w-100">
-                            <p class="carousel-text text-white my-5">
-                                Take you innovative business idea to the next level 
-                                and join tailored programs that include access to 
-                                exclusive development support dedicated workshops and mentors
+                            <p class="carousel-text text-white my-5" [innerHTML]="currentCarousel.content">
                             </p>
                         </div>
                     </div>

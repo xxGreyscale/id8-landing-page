@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+// improt anonymous-pro
+@import url('fonts/anonymous-pro.scss');
+
 
 // improt alma sans
 @import url('fonts/alma-sans.scss');
@@ -21,6 +24,7 @@
     --id-accent: #ef4123;
     --id8-primary-font: Proxima Nova LT, Sans Serif;
     --id8-secondary-font: Alma Sans, Helvetica, sans-serif;
+    --id8-monospace: 'Anonymous Pro', monospace;
     --total: 20px;
     --gutter: 2rem;
 }

@@ -26,11 +26,33 @@ section:first-child {
     .main-title .changing-text {
         display: block;
         position: relative;
+        font-family: var(--id8-monospace);
         height: inherit;
-        width: inherit;
-        opacity: 0;
+        width: max-content;
+        opacity: 1;
         transform: translateY(-.725rem);
-        animation: fadeInUp 2s ease-in forwards;
+        // animation: fadeInUp 2s ease-in forwards;
+    }
+
+    .main-title .changing-text::after,
+    .main-title .changing-text::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .changing-text::before {
+        background-color: #fff;
+        animation: typewriter 2s steps(10) forwards;
+    }
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
     }
 }
 
