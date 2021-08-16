@@ -17,7 +17,9 @@ section:first-child {
 
 ::ng-deep {
     .main-title {
-        font-size: calc(1.5em + 2.75vw) !important;
+        font-size: calc(1.5em + 2.275vw) !important;
+        margin: 1rem 0rem;
+        margin-bottom: 0rem;
         // opacity: 0;
         // transform: translateY(-3rem);
         // animation: fadeInUp 3s ease-in-out forwards;
@@ -27,7 +29,7 @@ section:first-child {
         display: block;
         position: relative;
         font-family: var(--id8-monospace);
-        height: inherit;
+        height: max-content;
         width: max-content;
         opacity: 1;
         transform: translateY(-.725rem);
@@ -38,21 +40,68 @@ section:first-child {
     .main-title .changing-text::before {
         content: "";
         position: absolute;
-        top: 0;
+        // height: 100%;
         left: 0;
         bottom: 0;
         right: 0;
     }
 
+    .changing-text::after {
+        width: .3em;
+        height: 15%;
+        background-color: #000;
+        bottom: 4px !important;
+    }
+
     .changing-text::before {
+        top: 0;
         background-color: #fff;
-        animation: typewriter 2s steps(10) forwards;
+    }
+
+    .changing-text.create::before {
+        animation: typewriter 3s steps(7) forwards;
+    }
+
+    .changing-text.create::after {
+        animation: 
+                typewriter 3s steps(7) forwards, 
+                blink 500ms steps(7) infinite;
+    }
+
+    .changing-text.collaborate::before {
+        animation: typewriter 3s steps(12) forwards,;
+    }
+
+    .changing-text.collaborate::after {
+        animation: 
+                    typewriter 3s steps(12) forwards,
+                    blink 500ms steps(12) infinite;;
+    }
+
+    .changing-text.connect::before {
+        animation: typewriter 3s steps(8) forwards;
+    }
+
+    .changing-text.connect::after {
+        animation: 
+                    typewriter 3s steps(8) forwards,
+                    blink 500ms steps(8) infinite;
     }
 }
 
 @keyframes typewriter {
-    to {
+    50% {
         left: 100%;
+    }
+
+    100% {
+        left: -1%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
     }
 }
 
@@ -109,6 +158,11 @@ section:first-child {
 
     .form-group {
         margin: 1.5rem 0rem;
+    }
+    
+    .form-group:nth-child(1) {
+        margin: 1.5rem 0rem;
+        margin-top: .5rem;
     }
 
     button.submit {

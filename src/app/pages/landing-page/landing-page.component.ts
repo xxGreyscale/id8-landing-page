@@ -13,7 +13,7 @@ export class LandingPageComponent implements OnInit {
       content: 
       `Take you innovative business idea to the next level and join tailored programs
        that include access to exclusive development support dedicated workshops and mentors`,
-      image: 'assets/img/kid.png'
+      image: 'assets/img/kid.png',
 
     },
     {
@@ -34,9 +34,9 @@ export class LandingPageComponent implements OnInit {
 
 
   titles: string[] = [
-    `<span class="changing-text"> Create. </span>`,
-    `<span class="changing-text"> Connect. </span>`,
-    `<span class="changing-text"> Collaborate. </span>`
+    `<span class="changing-text create"> Create. </span>`,
+    `<span class="changing-text connect"> Connect. </span>`,
+    `<span class="changing-text collaborate"> Collaborate. </span>`
   ]
 
   titleTimeout = 3000
