@@ -1,5 +1,23 @@
 
 
+.fold {
+    padding-top: 8rem;
+    overflow: hidden;
+    @media only screen and (min-width: 764px){
+        padding-top: 0rem;
+    }
+}
+.custom-container.fold {
+    padding-top: 0rem;
+    .container-xl {
+        flex-wrap: wrap;
+        @media only screen and (min-width: 764px) {
+            flex-wrap: nowrap;
+        }
+    }
+
+
+}
 img.carousel-image, .custom-bg {
     // min-width: calc(90vw/2);
     object-position: right center;
@@ -13,15 +31,20 @@ img.carousel-image, .custom-bg {
     left: 0;
 }
 
+.about {
+    width: 100%;
+    // padding-top: 236px;
+}
+
 .about:not(.about.content):before {
     content: '';
     background-color: var(--id-white);
-    height: calc(752px + 2rem);
     top: 0;
+    width: 100%;
     display: block;
     position: absolute;
-    min-width: calc(90vw/2 - 2rem);
     object-fit: contain;
+    height: 680px;
     z-index: -1;
     left: 0rem;
     background-size: cover;
@@ -29,6 +52,12 @@ img.carousel-image, .custom-bg {
     border-top-right-radius: 150px 100px;
     border-bottom-right-radius: 40px 150px;
     border-bottom-left-radius: 50px 40px;
+    
+    @media only screen and (min-width: 764px){
+        left: 2rem;
+        max-width: calc(90vw/2 - 2rem);
+        height: calc(752px + 2rem);
+    }
 
 }
 
@@ -61,27 +90,43 @@ img.carousel-image, .custom-bg {
 .carousel-title::before {
     content: "";
     background: url('../../../assets/img/molecule.png') no-repeat 0 0;
-    height: 768px;
-    top: -14rem;
+    top: 0rem;
+    height: 560px;
     display: block;
     position: absolute;
-    width: inherit;
+    width: 128%;
     margin-left: 0rem;
     transform: scaleX(-1);
     object-fit: contain;
-    left: -2rem;
     background-size: cover;
+    left: -1rem;
+    
+    @media only screen and (min-width: 764px) {
+        height: 768px;
+        left: -2rem;
+        width: inherit;
+        top: -14rem;
+    }
 }
 
 .about.content {
-    padding: 15rem 0rem;
+    padding: 2rem 0rem;
+    padding-top: 16rem;
+
+    @media only screen and (min-width: 764px){
+        padding: 15rem 0rem;
+    }
     
 }
 
 .about-carousel {
+    width: 100%;
     // background-color: var(--id-white);
-    min-width: calc(80vw/2);
     // z-index: -1;
+    
+    @media only screen and (min-width: 764px){
+        min-width: calc(80vw/2);
+    }
 
     @media only screen and (min-width: 1920px) {
         min-width: 30vw;
@@ -93,6 +138,13 @@ img.carousel-image, .custom-bg {
 }
 
 
+.category-header {
+    flex-wrap: wrap;
+
+    @media only screen and (min-width: 991px){
+        flex-wrap: nowrap;
+    }
+}
 
 .news-header {
     padding: 1.275rem 0rem;
@@ -100,8 +152,13 @@ img.carousel-image, .custom-bg {
     flex-direction: column;
 
     .pagination-text > span {
+        display: none;
         font-size: calc(.85rem + 1vw);
         font-weight: 300;
+
+        @media only screen and (min-width: 764px){
+            display: block;
+        }
     }
     .news-nav {
         align-self: center;
@@ -153,12 +210,31 @@ img.carousel-image, .custom-bg {
     overflow-x: scroll;
     scroll-snap-type: x proximity;
     grid-gap: 1rem;
+
+    @media only screen and (min-width: 764px){
+        grid-template-columns: 10px repeat(var(--total), calc(50% - var(--gutter) * 2)) 10px;
+
+    }
 }
 
 .tile-item {
     min-height: 18rem;
     border-radius: 1rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 15, 0.4);
+
+    
+    @media only screen and (min-width: 764px){
+        &.tile-one {
+            grid-column: 1 / 3; 
+            grid-row: 1 / 3;
+        }
+    
+        &.tile-two {
+            grid-column: 3 /  5;
+            grid-row: 1 / 1
+        }
+        
+    }
 }
 
 .news-container {
@@ -166,7 +242,7 @@ img.carousel-image, .custom-bg {
     z-index: 0;
     cursor: pointer;
     height: 100%;
-
+    
     .img-container {
         position: relative;
         z-index: -1;
@@ -188,6 +264,7 @@ img.carousel-image, .custom-bg {
     img {
         border-radius: .5rem;
         width: 100%;
+        object-fit: cover;
         height: 100%;
         transform: scale(1);
         transition: all 300ms ease-in;
