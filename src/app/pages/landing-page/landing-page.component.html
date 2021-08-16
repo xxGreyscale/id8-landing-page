@@ -56,22 +56,33 @@
                 <div class="carousel-container mr-0">
                     <div class="d-flex w-100 carousel-row h-100" style="flex-direction: row-reverse;">
 
-                        <div class="carousel-img mt-auto w-100">
+                        <div class="carousel-img mt-auto w-100" >
                             <!-- its a background image -->
+                            <!-- <div [ngClass]="{'gradient-mask': currentCarouselIndex === 2}" *ngIf="currentCarouselIndex === 2"> -->
+
+                            <!-- </div> -->
                             <img class="mt-auto" [src]='currentCarousel.image'>
                         </div>
                         <div class="slider w-100">
                             <p class="carousel-text text-white my-5" [innerHTML]="currentCarousel.content">
                             </p>
+                            <div class="carousel-indicators">
+                                <div [ngClass]="{'active': currentCarouselIndex === 0, 'carousel-indicator': carousels}"></div>
+                                <div [ngClass]="{'active': currentCarouselIndex === 1, 'carousel-indicator': carousels}"></div>
+                                <div [ngClass]="{'active': currentCarouselIndex === 2, 'carousel-indicator': carousels}"></div>
+                            </div>
                         </div>
                     </div>
 
             </div>
 
-            <div class="scroll-down">
-                <div class="scroll-down-knob">
+            <div [ngClass]="{'scroll-down': yPosition < 100,  'invisible': yPosition > 60}">
+                <div class="m-auto h-100" style="width: fit-content;">
+                    <div class="bg-dark mouse-line">
 
+                    </div>
                 </div>
+                <div class="scroll-down-knob"></div>
             </div>
         </div>
     </div>
@@ -81,7 +92,7 @@
     <div class="d-flex container-xl w-100 px-0 fold-container">
         <div class="page-mockup">
             <div class="mockup-bg">
-                <img src='assets/svg/window-mockup.svg'>
+                <img src='assets/img/connecting.png' style="">
             </div>
         </div>
         <div class="content">

@@ -27,6 +27,16 @@
     --id8-monospace: 'Anonymous Pro', monospace;
     --total: 20px;
     --gutter: 2rem;
+    --typewrite-speed: 4s;
+    --blink-speed: 600ms;
+}
+
+.visible {
+    display: inherit;
+}
+
+.invisible {
+    display: none;
 }
 
 body {
