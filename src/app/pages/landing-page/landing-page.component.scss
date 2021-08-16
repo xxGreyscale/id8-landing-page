@@ -14,6 +14,37 @@ section:first-child {
     margin-top: 0rem;
 }
 
+.scroll-down {
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    padding: .1rem;
+    margin: 0rem auto;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--id-black);
+    width: 1.5rem;
+    background-color: var(--id-white);
+
+    .scroll-down-knob {
+        background-color: var(--id-white);
+        margin-bottom: auto;
+        position: absolute;
+        margin: 0rem auto;
+        left: 0;
+        right: 0;
+        bottom: .125rem;
+        border-radius: 50%;
+        height: 1.1rem;
+        width: 1.1rem;
+        border: 1px solid var(--id-black);
+        animation: scroll 2s ease-in infinite;
+        animation-delay: 3s;
+        transition: all ease-in 2s;
+    }
+}
 
 ::ng-deep {
     .main-title {
@@ -65,7 +96,7 @@ section:first-child {
     .changing-text.create::after {
         animation: 
                 typewriter 3s steps(7) forwards, 
-                blink 500ms steps(7) infinite;
+                blink 600ms steps(7) infinite;
     }
 
     .changing-text.collaborate::before {
@@ -75,7 +106,7 @@ section:first-child {
     .changing-text.collaborate::after {
         animation: 
                     typewriter 3s steps(12) forwards,
-                    blink 500ms steps(12) infinite;;
+                    blink 600ms steps(12) infinite;;
     }
 
     .changing-text.connect::before {
@@ -85,38 +116,9 @@ section:first-child {
     .changing-text.connect::after {
         animation: 
                     typewriter 3s steps(8) forwards,
-                    blink 500ms steps(8) infinite;
+                    blink 600ms steps(8) infinite;
     }
 }
-
-@keyframes typewriter {
-    50% {
-        left: 100%;
-    }
-
-    100% {
-        left: -1%;
-    }
-}
-
-@keyframes blink {
-    to {
-        background: transparent;
-    }
-}
-
-@keyframes fadeInUp {
-    50% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(.725rem);
-        opacity: 0;
-    }
-}
-
 
 
 
@@ -527,6 +529,51 @@ section:first-child {
         }
     }
 }
+
+
+// keyframes
+
+
+@keyframes typewriter {
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: -1%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(.725rem);
+        opacity: 0;
+    }
+}
+
+@keyframes scroll {
+    
+    50% {
+        bottom: 1.125rem;
+        background-color: #000;
+    }
+
+    100% {
+        bottom: .125rem;
+    }
+}
+
 
 
 
