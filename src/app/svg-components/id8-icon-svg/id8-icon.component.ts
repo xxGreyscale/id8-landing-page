@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-id8-icon-svg',
   templateUrl: './id8-icon.component.svg',
   styleUrls: ['./id8-icon.component.scss']
 })
-export class Id8IconComponent {
+export class Id8IconSVGComponent {;
+
   fillColor = 'rgb(255, 0, 0)';
 
   changeColor() {

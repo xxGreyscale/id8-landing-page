@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './id8-word.component.svg',
   styleUrls: ['./id8-word.component.scss']
 })
-export class Id8WordComponent {
+export class Id8WordSVGComponent {
   fillColor = 'rgb(255, 0, 0)';
 
   changeColor() {

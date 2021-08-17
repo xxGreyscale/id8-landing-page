@@ -15,8 +15,8 @@ import { SvgComponentsModule } from './svg-components/svg-components.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    SvgComponentsModule,
     ComponentsModule,    
+    SvgComponentsModule,
     AppRoutingModule,
   ],
   providers: [
