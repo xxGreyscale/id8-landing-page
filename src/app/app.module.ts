@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http'
 import { NewsService } from './services/news/news.service';
+import { SvgComponentsModule } from './svg-components/svg-components.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NewsService } from './services/news/news.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    SvgComponentsModule,
     ComponentsModule,    
     AppRoutingModule,
   ],

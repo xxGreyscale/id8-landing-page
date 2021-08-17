@@ -14,4 +14,4 @@ import { Id8WordComponent } from './id8-word-svg/id8.sowrd.component';
     CommonModule
   ]
 })
-export class SvgModule { }
+export class SvgComponentsModule { }
