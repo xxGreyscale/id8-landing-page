@@ -24,14 +24,14 @@ export class LandingPageComponent implements OnInit {
       content: 
       `Take you innovative business idea to the next level and join tailored programs
        that include access to exclusive development support dedicated workshops and mentors`,
-      image: 'assets/img/kid.png',
+      image: 'assets/img/lightbulb.png',
 
     },
     {
       content: 
       `A space connecting people & ideas to business resources;
        promoting collaboration and sharing of collective knowledge to support your journey.`,
-      image: 'assets/img/ideating.png'
+      image: 'assets/img/paper-on-wall.png'
 
     },
     {
