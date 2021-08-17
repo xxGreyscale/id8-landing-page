@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-id8-icon-svg',
   templateUrl: './id8-icon.component.svg',
-  styleUrls: ['./id8-icon.component.css']
+  styleUrls: ['./id8-icon.component.scss']
 })
 export class Id8IconComponent {
   fillColor = 'rgb(255, 0, 0)';

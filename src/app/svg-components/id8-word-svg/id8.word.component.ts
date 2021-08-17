@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-id8-word-svg',
   templateUrl: './id8-word.component.svg',
-  styleUrls: ['./id8-word.component.css']
+  styleUrls: ['./id8-word.component.scss']
 })
 export class Id8WordComponent {
   fillColor = 'rgb(255, 0, 0)';
