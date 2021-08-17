@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'id8-icon-svg',
+  selector: 'app-id8-icon-svg',
   templateUrl: './id8-icon.component.svg',
   styleUrls: ['./id8-icon.component.css']
 })
