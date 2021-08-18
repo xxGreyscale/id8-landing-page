@@ -12,7 +12,13 @@
         <div class="d-flex align-items-center justify-content-end">
             <ul class="navbar-nav login-link" style="margin-left: 0rem">
                 <li class="nav-item mx-4">
-                    <a class="nav-link" href="https://app.id8.space/">Login </a>
+                    <a class="nav-link" 
+                                    [ngClass]="{'text-white': yPosition < 100 && pageUrl === undefined, 'text-black': pageUrl !== undefined}" 
+                                    href="https://app.id8.space/">
+                        <b>
+                            Login 
+                        </b>
+                    </a>
                 </li>
             </ul>
             <button (click)="onHambugerClick()" class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

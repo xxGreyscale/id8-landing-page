@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HandleError, HttpErrorHandler } from '../error-handler/http-error-handler.service';
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'my-auth-token'
+    Authorization: 'Bearer 25ee84ee23888fda918ec72206742811c64b2df099773f966975dafe1b32b31b5',
+    'Accept': 'application/json',
+    'Accept-Charset': 'utf-8'
   })
 };
 
@@ -17,7 +18,8 @@ const httpOptions = {
 })
 export class NewsService {
 
-  id8Url = 'https://dev-api.id8.space/api/'
+
+  mediumAPI = 'https://api.medium.com';
 
   private handleError: HandleError;
 
@@ -28,10 +30,10 @@ export class NewsService {
   }
 
   //** Get news from the server */ 
-  getNews(): Observable<any[]> {
-    return this.http.get<any[]>(this.id8Url)
+  getUser(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.mediumAPI}/v1/me`, httpOptions)
                 .pipe(
-                  catchError(this.handleError('getNews', []))
+                  catchError(this.handleError('getUser', []))
                 )
   }
 }
