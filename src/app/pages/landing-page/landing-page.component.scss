@@ -202,6 +202,7 @@ section:first-child {
         width: 75%;
         flex-direction: row;
         display: flex;
+        z-index: 0;
         justify-content: space-between;
         margin: 0rem 0rem;
         bottom: -20%;

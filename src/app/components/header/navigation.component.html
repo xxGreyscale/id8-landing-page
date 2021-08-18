@@ -1,11 +1,11 @@
 <nav  class="navbar navbar-expand-md navbar-light" [ngClass]="{'transparent-mode': yPosition< 140,
                                                                  'light-mode' : yPosition > 140}">
-    <div class="container-lg nav-container">
+    <div class="container-lg px-lg-0 nav-container">
        
     <div class="brand-section align-items-center">
-        <a class="navbar-brand" href="#">
-            <div class="" style="width: 120px;">
-                <app-id8-icon-svg></app-id8-icon-svg>
+        <a class="navbar-brand d-block my-auto" href="#">
+            <div class="my-auto brand-image" >
+                <app-id8-icon-svg [yPosition]="yPosition"></app-id8-icon-svg>
             </div>
         </a>
         <div class="d-flex align-items-center justify-content-end">

@@ -6,6 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./id8-icon.component.scss']
 })
 export class Id8IconSVGComponent {;
+  @Input() yPosition: any;
+
+  constructor() {
+    
+  }
+
+  ngOnChanges() {
+    console.log(this.yPosition);
+    // manipulate data here
+  }
 
   fillColor = 'rgb(255, 0, 0)';
 

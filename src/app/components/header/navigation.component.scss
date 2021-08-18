@@ -99,8 +99,18 @@ ul.navbar-nav {
     background-color: var(--id-black);
 }
 
+.brand-image {
+    width: 120%;
+}
 
-@media only screen and (max-width: 768px){
+@media only screen and (min-width: 768px) {
+    .brand-image {
+        width: 80%;
+    }
+}
+
+
+@media only screen and (max-width: 767.88px){
 
     .navbar-toggler {
         display: block;
@@ -134,10 +144,12 @@ ul.navbar-nav {
     .nav-container {
         flex-direction: column;
         align-items: unset;
-        div {
-            width: 100%;
-        }
     }
+
+    .brand-image {
+        width: 100%;
+    }
+
     .brand-section {
         display: flex;
         flex-direction: row;
