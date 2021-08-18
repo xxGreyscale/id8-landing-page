@@ -16,6 +16,8 @@ g#notes {
     transition: all ease-in .5s;
 }
 
+
+
 .navbar-nav {
     .nav-item {
         margin: 0rem .125rem;
@@ -38,6 +40,7 @@ g#notes {
     .nav-item.active {
         a.nav-link {
             color: var(--id-primary-color);
+            font-weight: 600;
             opacity: 1;
         }
     }
@@ -95,6 +98,12 @@ ul.navbar-nav {
                 color: var(--id-black);
             }
         }
+        .nav-item.active {
+            a.nav-link {
+                color: var(--id-primary-color);
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -110,6 +119,24 @@ ul.navbar-nav {
 @media only screen and (min-width: 768px) {
     .brand-image {
         width: 80%;
+    }
+
+    .bd-highlight {
+        margin: auto 1.5rem;
+    }
+
+    .dark-text {
+        .nav-item {
+            a.nav-link {
+                color: var(--id-black);
+            }
+        }
+        .nav-item.active {
+            a.nav-link {
+                color: var(--id-primary-color);
+                opacity: 1;
+            }
+        }
     }
 }
 

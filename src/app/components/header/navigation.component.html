@@ -1,5 +1,6 @@
 <nav  class="navbar navbar-expand-md navbar-light" [ngClass]="{'transparent-mode': yPosition< 140,
-                                                                 'light-mode' : yPosition > 140}">
+                                                                 'light-mode' : yPosition > 140,
+                                                                'dark-text': yPosition < 140 && pageUrl !== undefined}">
     <div class="container-lg px-lg-0 nav-container">
        
     <div class="brand-section align-items-center">
@@ -22,10 +23,10 @@
     <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNav">
         <div class="d-flex bd-highlight">
                 <ul class="navbar-nav align-items-center mt-2 px-5 mt-lg-0">
-                    <li class="nav-item active">
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === undefined}">
                         <a class="nav-link" href="/">Home </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === 'about-us'}">
                         <a class="nav-link" href="about-us">About</a>
                     </li>
                     <li class="nav-item">

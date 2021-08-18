@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,8 +8,14 @@ import { Component, Input } from '@angular/core';
 })
 export class SearchIconComponent {
   @Input() yPosition: any;
+  pageUrl: string = '';
 
   ngOnChange() {
+  }
+
+  constructor(private location: Location) {
+    this.pageUrl = this.location.path();
+    this.pageUrl = this.pageUrl.split('/')[1]
   }
 
   fillColor = 'rgb(255, 0, 0)';
