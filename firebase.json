@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/id8LandingPage",
     "ignore": [
       "firebase.json",
       "**/.*",
