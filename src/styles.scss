@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+
+// improt anonymous-pro
+@import url('fonts/anonymous-pro.scss');
+
+
+// improt alma sans
+@import url('fonts/alma-sans.scss');
+
+
+// font face proxima nova
+@import url('fonts/proxima-nova.scss');
+
+
+// create variables here
+:root {
+    --rs-gutter: 4rem;
+    --id-vt-spacing: 4rem;
+    --id-primary-color: #f7b20c !important;
+    --id-primary-shadow: #f7b10c70;
+    --id-black: #121617 !important;
+    --id-secondary: #ed5f00;
+    --id-white: #fafcfc !important;
+    --id-accent: #ef4123;
+    --id8-primary-font: Proxima Nova LT, Sans Serif;
+    --id8-secondary-font: Alma Sans, Helvetica, sans-serif;
+    --id8-monospace: 'Anonymous Pro', monospace;
+    --total: 20px;
+    --gutter: 2rem;
+    --typewrite-speed: 4s;
+    --blink-speed: 600ms;
+}
+
+.visible {
+    display: inherit;
+}
+
+.invisible {
+    display: none;
+}
+
+body {
+    font-family: var(--id8-secondary-font) !important;
+    background-color: var(--id-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--id8-primary-font);
+    color: var(--id-black);
+}
+
+h1 {
+    font-size: 3.5rem !important;
+    font-weight: normal !important;
+
+    @media only screen and (min-width: 1200px){
+        font-size: calc(1.5rem + 2.5vw) !important;
+    }
+}
+
+h2 {
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    
+    @media only screen and (min-width: 1200px){
+        font-size: calc(1.275rem + 2.5w) !important;
+    }
+}
+
+h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    @media only screen and (min-width: 1200px){
+        font-size: calc(1rem + 2.5w) !important;
+    }
+}
+
+
+input {
+    background:transparent;
+    border-radius: 1rem !important;
+    border-top-left-radius: 50px 25px !important;
+    border-top-right-radius: 25px 200px !important;
+    border-bottom-right-radius: 50px 25px !important;
+    border-bottom-left-radius: 25px 200px !important;
+    font-size: 1rem !important;
+    &.drawy-lines {
+        border:solid 4px var(--id-black);
+     }
+}
+
+button {
+    height: 3.5rem;
+    border-radius: .25rem !important;
+    border-top-left-radius: 255px 15px !important;
+    border-top-right-radius: 15px 225px !important;
+    border-bottom-right-radius: 225px 15px !important;
+    border-bottom-left-radius: 15px 255px !important;
+    background-color: var(--id-primary-color) !important;
+    color: var(--id-black) !important;
+    font-weight: 700 !important;
+    .no-border {
+        border: solid 0px var(--id-black);
+    }
+}
+
+p {
+    
+    a {
+        color: var(--id-accent) !important;
+        text-decoration: none !important;
+    }
+    a:hover {
+    opacity: .8;
+    }
+}
+
+ul {
+  &.socials {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      padding: 0rem;
+
+      li {
+          margin: 0rem .725rem;
+      }
+
+      li:nth-child(1) {
+          margin-left: 0rem;
+      }
+
+      li:hover {
+          cursor: pointer;
+          transform: scale(.9);
+          animation-name: grow;
+          animation-duration: 1s;
+          animation-delay: .01s;
+          -o-animation-timing-function: ease-in-out;
+        //   animation-direction: alternate;
+      }
+  }  
+}
+
+.bg-id8-white {
+    background-color: var(--id-white);
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+    
+    to {
+        transform: scale(.9);
+    }
+}

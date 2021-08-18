@@ -1,0 +1,144 @@
+// colors 
+
+.cls-1 {
+    fill: #505762;
+  }
+
+  .cls-2 {
+    fill: #f4b627;
+  }
+
+  .cls-3 {
+    fill: #f16324;
+  }
+
+  .cls-4 {
+    fill: #808184;
+    fill-opacity: 0.4;
+  }
+
+  .cls-5 {
+    fill: #ee4023;
+  }
+
+  .cls-6 {
+    fill: #f0d78b;
+  }
+
+//********* End of colors here ***************//   
+.word {
+    // display: none;
+    opacity: 0;
+}
+
+.icon.word {
+    opacity: 1;
+    display: block;
+    fill: #505762;
+}
+
+.logo-mark {
+    #notes {
+        display: block;
+        transition: all ease-in 1s;
+    }
+
+    .word:not(.icon) {
+        display: block;
+    }
+
+    #word-mark {
+        transform: translateX(1);
+        transition: all ease-in 1s;
+    }
+    #orange-note {
+        transform: translate(1,1);
+    }
+    
+    #yellow-note {
+        transform: translate(1,1);
+    }
+}
+
+.shrink {
+    transition: all ease-in-out 1s;
+    #notes {
+        animation: dissolve ease-in .1s forwards;
+        animation-delay: .7s;
+        transition: all ease-in 1s;
+    }
+
+    .word:not(.icon) {
+        animation: dissolve-word ease-in 1s forwards;
+        animation-delay: .7s;
+        transition: all ease-in .5s;
+    }
+
+    #word-mark {
+        animation: push-back ease-in .5s forwards;
+        animation-delay: .8s;
+        transition: all ease-in 1s;
+    }
+    #orange-note {
+        animation: hide-orange ease-in 1s forwards;
+        // animation-delay: .2s;
+        transition: all ease-in 1s;
+    }
+    
+    #yellow-note {
+        animation: hide-yellow ease-in 1s forwards;
+        // animation-delay: .2s;
+        transition: all ease-in 1s;
+    }
+}
+
+@keyframes hide-orange {
+    from {
+        transform: translate(1, 1);
+    }
+    to {
+        transform: translate(-3rem, 3rem);
+    }
+}
+
+@keyframes hide-yellow {
+    from {
+        transform: translate(1, 1);
+    }
+    to {
+        transform: translate(-3.5rem, -1.25rem);
+    }
+}
+
+@keyframes dissolve {
+    0% {
+        // opacity: 1;
+        display: block;
+    }
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@keyframes dissolve-word {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes push-back {
+    from {
+        transform: translateX(1);
+    }
+    to {
+        transform: translateX(-11rem);
+    }
+}

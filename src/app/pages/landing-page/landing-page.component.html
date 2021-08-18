@@ -1,0 +1,156 @@
+
+<section class="first fold w-100" id="upper_fold">
+   
+    <div class="w-100 container-xl upper-fold">
+        <div class="fold-container pr-0 w-100 h-100">
+            <div class="rs-container">
+                <div class="d-block form-area w-100">
+                    <h3 class="font-weight-normal" style="margin-left: .125rem; font-weight: normal !important; color: var(--id-accent);">
+                        A space to 
+                    </h3>
+                    <h1 class="main-title" [innerHtml] ='heading'>
+                    </h1>
+    
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="Email">
+                          </div>
+          
+                          <div class="form-group">
+                              <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="Password">
+                              <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                            </div>
+
+                            <button type="button" name="" id="" class="btn btn-lg btn-block submit">
+                                Sign up
+                            </button>
+
+                            <p class="mt-3 w-75" style="opacity: .8;">
+                                By signing up for id8 space, you agree to id8 space’s 
+                                <a href="#">Terms of Service</a>
+                                & 
+                                <a href="#">Privacy Policy</a>
+                                .
+                            </p>
+                    </form>
+
+                    <p class="font-weight-bold">
+                        or sign up using:
+                    </p>
+
+                    <ul class="socials">
+                        <li>
+                            <img src="assets/img/facebook-ico.png">
+                        </li>
+                        <li>
+                            <img src="assets/img/gmail-ico.png">
+                        </li>
+                        <li>
+                            <img src="assets/img/linkedIn-circle-ico.png">
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+                <div class="carousel-container mr-0">
+                    <div class="d-flex w-100 carousel-row h-100" style="flex-direction: row-reverse;">
+
+                        <div class="carousel-img mt-auto w-100" >
+                            <!-- its a background image -->
+                            <!-- <div [ngClass]="{'gradient-mask': currentCarouselIndex === 2}" *ngIf="currentCarouselIndex === 2"> -->
+
+                            <!-- </div> -->
+                            <img class="mt-auto" [src]='currentCarousel.image'>
+                        </div>
+                        <div class="slider w-100">
+                            <p class="carousel-text text-white my-5" [innerHTML]="currentCarousel.content">
+                            </p>
+                            <div class="carousel-indicators">
+                                <div [ngClass]="{'active': currentCarouselIndex === 0, 'carousel-indicator': carousels}"></div>
+                                <div [ngClass]="{'active': currentCarouselIndex === 1, 'carousel-indicator': carousels}"></div>
+                                <div [ngClass]="{'active': currentCarouselIndex === 2, 'carousel-indicator': carousels}"></div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+
+            <div [ngClass]="{'scroll-down': yPosition < 100,  'invisible': yPosition > 60}">
+                <div class="m-auto h-100" style="width: fit-content;">
+                    <div class="bg-dark mouse-line">
+
+                    </div>
+                </div>
+                <div class="scroll-down-knob"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="second fold">
+    <div class="d-flex container-xl w-100 px-0 fold-container">
+        <div class="page-mockup">
+            <div class="mockup-bg">
+                <img src='assets/img/reaching-out.png' style="">
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="mb-4">
+                A virtual space for <br /> innovators
+            </h2>
+
+            <p>
+                With support from leading industry mentors, partners and experts, 
+                refine your skills or explore new career opportunities, 
+                id8 Space’s programs and workshops are to empower tomorrow’s business leaders
+            </p>
+
+            <div class="w-100 feature-container align-items-center">
+                <div class="feature-illustration">
+                        <img src='assets/svg/window.svg' width="100%">
+                </div>
+                
+                <div class="w-100 mr-auto mx-md-4 mx-lg-4">
+                    <h3 class="text-upper-case">
+                        Hackathon
+                    </h3>
+                    <p class="w-100">
+                        Matching great developers with tech companies.
+                         Engage or source top developers with hackathons, asses, interview and up skill them with ease
+                    </p>
+                </div>
+            </div>
+            <div class="w-100 feature-container align-items-center">
+                <div class="feature-illustration">
+                        <img src='assets/svg/window.svg' width="100%">
+                </div>
+                
+                <div class="w-100 mr-auto mx-md-4 mx-lg-4">
+                    <h3 class="text-upper-case">
+                        SNDBX
+                    </h3>
+                    <p class="w-100">
+                        Real-time human insights. Get feedback critical 
+                        to product development, run polls, gather insights and connect with a community of users
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="third fold w-100">
+    <div class="d-flex fold-container w-100 pb-3">
+        <h2 class="mx-auto mb-5">
+            Our partners
+        </h2>
+        <div class="d-flex patners-logo w-100 my-5">
+            <img src="assets/img/fmt.png" alt="fmt logo" width="184">
+            <img src="assets/img/liquid.png" alt="Liquid telecoms logo" width="184">
+            <img src="assets/img/4africa.png" alt="Microsofts 4africa logo" width="184">
+            <img src="assets/img/insight.png" alt="Insights impact logo" width="184">
+
+        </div>
+    </div>
+</section>

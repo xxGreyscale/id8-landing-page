@@ -1,0 +1,57 @@
+<nav  class="navbar navbar-expand-md navbar-light" [ngClass]="{'transparent-mode': yPosition< 140,
+                                                                 'light-mode' : yPosition > 140,
+                                                                'dark-text': yPosition < 140 && pageUrl !== undefined}">
+    <div class="container-lg px-lg-0 nav-container">
+       
+    <div class="brand-section align-items-center">
+        <a class="navbar-brand d-block my-auto" href="#">
+            <div class="my-auto brand-image" >
+                <app-id8-icon-svg [yPosition]="yPosition"></app-id8-icon-svg>
+            </div>
+        </a>
+        <div class="d-flex align-items-center justify-content-end">
+            <ul class="navbar-nav login-link" style="margin-left: 0rem">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" 
+                                    [ngClass]="{'text-white': yPosition < 100 && pageUrl === undefined, 'text-black': pageUrl !== undefined}" 
+                                    href="https://app.id8.space/">
+                        <b>
+                            Login 
+                        </b>
+                    </a>
+                </li>
+            </ul>
+            <button (click)="onHambugerClick()" class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNav">
+        <div class="d-flex bd-highlight">
+                <ul class="navbar-nav align-items-center mt-2 px-5 mt-lg-0">
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === undefined}">
+                        <a class="nav-link" href="/">Home </a>
+                    </li>
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === 'about-us'}">
+                        <a class="nav-link" href="about-us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                </ul>
+
+                <form *ngIf="!isCollapsed" class="d-flex justify-content-end align-items-center mx-3 ml-5 my-2 my-lg-0">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Login </a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <app-search-ico-svg [yPosition]="yPosition"></app-search-ico-svg>
+                        </li>
+                    </ul>
+               </form>
+            
+        </div>
+    </div>
+    </div>
+</nav>
