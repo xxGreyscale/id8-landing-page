@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-id8-word-svg',
-  templateUrl: './id8-word.component.svg',
-  styleUrls: ['./id8-word.component.scss']
+  selector: 'app-search-ico-svg',
+  templateUrl: './search-ico.component.svg',
+  styleUrls: ['./search-ico.component.scss']
 })
-export class Id8WordSVGComponent {
+export class SearchIconComponent {
+  @Input() yPosition: any;
+
+  ngOnChange() {
+  }
+
   fillColor = 'rgb(255, 0, 0)';
 
   changeColor() {

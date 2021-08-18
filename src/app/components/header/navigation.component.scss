@@ -18,7 +18,11 @@ g#notes {
 
 .navbar-nav {
     .nav-item {
-        margin: 0rem .125rem !important;
+        margin: 0rem .125rem;
+        cursor: pointer;
+        img {
+            fill: var(--id-white);
+        }
         a.nav-link {
             position: relative;
             color: var(--id-white);
