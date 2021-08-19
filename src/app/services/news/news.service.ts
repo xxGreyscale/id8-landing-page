@@ -7,7 +7,6 @@ import { HandleError, HttpErrorHandler } from '../error-handler/http-error-handl
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'Bearer 25ee84ee23888fda918ec72206742811c64b2df099773f966975dafe1b32b31b5',
     'Accept': 'application/json',
     'Accept-Charset': 'utf-8'
   })
@@ -18,10 +17,10 @@ const httpOptions = {
 })
 export class NewsService {
 
-
-  mediumAPI = 'https://api.medium.com';
-
+  id8Url = 'https://staging-api.id8.space/api';
   private handleError: HandleError;
+  news: any = []
+  
 
   constructor(
     private http: HttpClient,
@@ -30,10 +29,20 @@ export class NewsService {
   }
 
   //** Get news from the server */ 
-  getUser(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.mediumAPI}/v1/me`, httpOptions)
+  getNewsFromServer(headerOptions: Object): Observable<any> {
+    return this.http.get<any>(`${this.id8Url}/posts?page=1`, headerOptions)
                 .pipe(
                   catchError(this.handleError('getUser', []))
                 )
   }
+
+  getNews(headerOptions: Object): any[] {
+    this.getNewsFromServer(headerOptions).subscribe(response => {
+      this.news = response['data']
+    })
+    
+    return this.news;
+  }
+
+
 }

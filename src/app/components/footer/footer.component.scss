@@ -6,6 +6,10 @@ footer {
     width: 100%;
 }
 
+.bg-dark {
+    background-color: var(--id-black) !important;
+}
+
 .upper-footer {
     border-bottom: 1px solid #d2d2d2;
 }
@@ -57,9 +61,10 @@ footer {
 .contacts-form {
     color: #666;
     border-radius: .275rem;
-    padding: 2.5rem 3rem;
+    padding: 2.85rem 3rem;
     padding-bottom: 4rem;
-    background: #000;
+    background: var(--id-black);
+    box-shadow: 0rem .275rem 1rem rgba(0, 0, 0, .4);
     label {
         color: #fafcfc;
     }
