@@ -38,10 +38,7 @@ export class HeaderComponent implements OnInit {
     this.pageUrl = this.pageUrl.split('/')[1]
     console.log(this.pageUrl);
 
-    this.userService.authenitcate().subscribe(authentication => {
-      console.log(authentication);
-      
-    })
+    this.userService.authentication()
     
   }
 

@@ -62,68 +62,25 @@
                 </div>
                 <div class="pagination-text mt-4 my-md-auto my-lg-auto">
                     <span>
-                        4 out of 9 News
+                        4 out of 5 News
                     </span>
                 </div>
             </div>
         </div>
         <!-- News grid down here -->
 
-        <div class="tiles my-5">
-            <div class="tile-item tile-one">
+        <div class="tiles my-5" >
+            <div class="tile-item" *ngFor="let new of news; index as i; first as isFirst" 
+                                [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
                 <div class="news-container h-100">
                     <div class="img-container">
-                        <img src="assets/img/park-hyatt.webp" alt="">
+                        <img [src]="new?.cover_photo" alt="">
                     </div>
                     <p class="news-tag">
-                        News
+                        {{new?.category?.name}}
                     </p>
-                    <p class="news-title">
-                        Item 1
-                    </p>
-                </div>
-            </div>
-
-            <div class="tile-item tile-two">
-                <div class="news-container">
-                    <div class="img-container">
-                        <img src="assets/img/park-hyatt.webp" alt="">
-                    </div>
-
-                    <p class="news-tag">
-                        News
-                    </p>
-
-                    <p class="news-title">
-                        Lorem ipsum dolor sit emet, sed diamy naounomy
-                    </p>
-                </div>
-            </div>
-
-            <div class="tile-item">
-                <div class="news-container">
-                    <div class="img-container">
-                        <img src="assets/img/park-hyatt.webp" alt="">
-                    </div>
-                    <p class="news-tag">
-                        News
-                    </p>
-                    <p class="news-title">
-                        Lorem ipsum dolor sit emet, sed diamy naounomy
-                    </p>
-                </div>
-            </div>
-
-            <div class="tile-item">
-                <div class="news-container">
-                    <div class="img-container">
-                        <img src="assets/img/park-hyatt.webp" alt="">
-                    </div>
-                    <p class="news-tag">
-                        News
-                    </p>
-                    <p class="news-title">
-                        Lorem ipsum dolor sit emet, sed diamy naounomy
+                    <p class="news-title" >
+                        {{new?.title}}
                     </p>
                 </div>
             </div>

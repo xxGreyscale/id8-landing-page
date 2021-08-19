@@ -53,6 +53,25 @@ export class UserService {
     })
   }
 
+  getHeader(): Object {
+    let authorizationObject: any;
+    let headerOptions
+    if(localStorage.getItem('authentication')) {
+      authorizationObject = localStorage.getItem('authentication')
+      authorizationObject = JSON.parse(authorizationObject)
+    }
+    headerOptions = {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${authorizationObject.access_token}`,
+        'Content-Type':  'application/json',
+        'Accept': 'application/json',
+        'Accept-Charset': 'utf-8'
+      })
+    }
+
+    return headerOptions;
+  }
+
   getUserAcc(): Observable<any> {
     return this.http.get<any>(`${this.id8Url}/user?page=1`, httpOptions)
                 .pipe(
