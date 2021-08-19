@@ -9,6 +9,7 @@ import { NewsService } from './services/news/news.service';
 import { SvgComponentsModule } from './svg-components/svg-components.module';
 import { HttpErrorHandler } from './services/error-handler/http-error-handler.service';
 import { MessageService } from './services/message/message.service';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MessageService } from './services/message/message.service';
   providers: [
     MessageService,
     HttpErrorHandler,
+    UserService,
     NewsService,
 
   ],

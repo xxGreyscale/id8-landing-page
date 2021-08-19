@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed
   }
 
-  constructor(private location: Location) { 
+  constructor(private location: Location, private userService: UserService) { 
     
   }
   
@@ -36,6 +37,11 @@ export class HeaderComponent implements OnInit {
     this.pageUrl = this.location.path();
     this.pageUrl = this.pageUrl.split('/')[1]
     console.log(this.pageUrl);
+
+    this.userService.authenitcate().subscribe(authentication => {
+      console.log(authentication);
+      
+    })
     
   }
 
