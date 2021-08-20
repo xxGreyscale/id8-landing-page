@@ -8,7 +8,6 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
     'Accept': 'application/json',
-    'Accept-Charset': 'utf-8'
   })
 };
 

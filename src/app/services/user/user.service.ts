@@ -9,7 +9,6 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
     'Accept': 'application/json',
-    'Accept-Charset': 'utf-8'
   })
 };
 
@@ -65,7 +64,6 @@ export class UserService {
         Authorization: `Bearer ${authorizationObject.access_token}`,
         'Content-Type':  'application/json',
         'Accept': 'application/json',
-        'Accept-Charset': 'utf-8'
       })
     }
 
