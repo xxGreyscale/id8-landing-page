@@ -11,6 +11,7 @@ const httpOptions = {
   })
 };
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,14 +29,21 @@ export class NewsService {
   }
 
   //** Get news from the server */ 
-  getNewsFromServer(headerOptions: Object): Observable<any> {
-    return this.http.get<any>(`${this.id8Url}/posts?page=1`, headerOptions)
+  getNewsFromServer(headerOptions?: Object): Observable<any> {
+    let HTTPOptions:Object = {
+
+      headers: new HttpHeaders({
+      }),
+      responseType: 'text'
+   }
+    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
+    return this.http.get<string>('https://rss.app/feeds/seNz2zzMDf1JD9Cv.xml', HTTPOptions)
                 .pipe(
                   catchError(this.handleError('getUser', []))
                 )
   }
 
-  getNews(headerOptions: Object): any[] {
+  getNews(headerOptions?: Object): any[] {
     this.getNewsFromServer(headerOptions).subscribe(response => {
       this.news = response['data']
     })
