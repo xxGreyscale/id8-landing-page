@@ -213,6 +213,7 @@ img.carousel-image, .custom-bg {
     
     @media only screen and (min-width: 764px){
         max-height: 80vh;
+        grid-template-rows: minmax(320px, 1fr) !important;
         grid-template-columns: repeat(4, minmax(0, 1fr));;
 
     }
@@ -275,6 +276,25 @@ img.carousel-image, .custom-bg {
             left: 0;
             background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0, 0, 15, 0.6) 60%, rgba(0,0,0,1) 100%);
         }
+
+        &::ng-deep {
+            div {
+                height: 100%;
+                width: 100%;
+            }
+
+            div > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all 300ms ease-in;
+                transform: scale(1);
+                border-radius: .5rem;
+            }
+            div > div {
+                display: none !important;
+            }
+        }
     }
     img {
         border-radius: .5rem;
@@ -305,19 +325,29 @@ img.carousel-image, .custom-bg {
         -webkit-box-orient: vertical;
     }
 
-    p.news-title {
-        font-family: var(--id8-primary-font);
-        font-weight: 700;
+    .news-title {
         position: absolute;
         margin: 0rem 1.725rem;
         bottom: 1.5rem;
         color: var(--id-white);
-        font-size: calc(1rem + .125vw);
+    }
+    
+    p {
         overflow: hidden;
+        font-family: var(--id8-primary-font);
+        font-weight: 600;
+        font-size: calc(1rem + .3vw) !important;
         text-overflow: ellipsis;
         display: -webkit-box;
+        margin-bottom: 0rem !important;
         -webkit-line-clamp: 2; /* number of lines to show */
         -webkit-box-orient: vertical;
+
+    }
+    caption {
+        display: block;
+        width: 100%;
+        font-size: calc(.5rem + .35vw) !important;
     }
 
     &:hover {

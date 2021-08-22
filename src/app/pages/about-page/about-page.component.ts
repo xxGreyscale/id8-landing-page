@@ -25,9 +25,12 @@ export class AboutPageComponent implements OnInit {
   getNews() {
     let tmp = this.newService.getNewsFromServer()
     tmp.subscribe(response => {
-      // this.news = response['data'];
-      // this.news = this.news.slice(0,4)
-      console.log(response);
+      
+      let xmlParsedText = parser.parse(response);
+      this.news = xmlParsedText.rss.channel.item;
+      this.news = this.news.slice(0,4)
+      console.log(this.news);
+      
       
     })
   }
