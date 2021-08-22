@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { XmlParser } from '@angular/compiler';
+=======
+import { HttpClient } from '@angular/common/http';
+>>>>>>> new-changes
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
 import { UserService } from 'src/app/services/user/user.service';
 import * as xml2js from 'xml2js';
+
+
+declare var require: any;
+var parser = require('fast-xml-parser');
 
 
 @Component({
@@ -15,6 +23,7 @@ export class AboutPageComponent implements OnInit {
 
   user: any;
   news: any[] = [];
+<<<<<<< HEAD
   xmlItems: any;
   
   constructor(private newService: NewsService, private userService: UserService, private _http: HttpClient) { }
@@ -23,13 +32,24 @@ export class AboutPageComponent implements OnInit {
     // this.getNews()
     // this.userService.getHeader()
     this.getRssXML()
+=======
+  constructor(private newService: NewsService, private userService: UserService, private _http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.getNews()    
+>>>>>>> new-changes
   }
   
   getNews() {
-    let tmp = this.newService.getNewsFromServer(this.userService.getHeader())
+    let tmp = this.newService.getNewsFromServer()
     tmp.subscribe(response => {
-      this.news = response['data'];
+      
+      let xmlParsedText = parser.parse(response);
+      this.news = xmlParsedText.rss.channel.item;
       this.news = this.news.slice(0,4)
+      console.log(this.news);
+      
+      
     })
   }
 
