@@ -2,8 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
 import { UserService } from 'src/app/services/user/user.service';
-import * as xml2js from 'xml2js';
-
 
 declare var require: any;
 var parser = require('fast-xml-parser');
