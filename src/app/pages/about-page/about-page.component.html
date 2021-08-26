@@ -48,15 +48,15 @@
                 <div class="my-auto ml-auto">
                     <ul class="news-nav">
                         <li class="news-nav-item active">
-                            News
+                            East Africa
                         </li>
     
                         <li class="news-nav-item">
-                            Oppotunities
+                            Africe
                         </li>
     
                         <li class="news-nav-item">
-                            Ecosystme
+                            Global
                         </li>
                     </ul>
                 </div>
@@ -70,14 +70,17 @@
         <!-- News grid down here -->
 
         <div class="tiles my-5" >
-            <div class="tile-item" *ngFor="let new of news; index as i; first as isFirst" 
+            <div class="tile-item" *ngFor="let new of news; let i = index; first as isFirst" 
                                 [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
                 <div class="news-container h-100">
-                    <div class="img-container" [innerHTML]="new?.description">
+                    <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
 
                     </div>
+                    <div class="img-container" *ngIf="currentURL === urls[0]">
+                        <img [src]="newsImgs[i]">
+                    </div>
                     <p class="news-tag">
-                        {{new?.category?.name}}
+                        {{new?.category[1]}}
                     </p>
                     <div class="news-title">
                         <p class="w-100 " >
