@@ -79,7 +79,7 @@ export class LandingPageComponent implements OnInit {
   ngDoCheck() {
     if (this.currentTitleIndex >= 0) {
       this.heading = this.titles[this.currentTitleIndex]
-      console.log(this.heading);
+      // console.log(this.heading);
       
     }
 

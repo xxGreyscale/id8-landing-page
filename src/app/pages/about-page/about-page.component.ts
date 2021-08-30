@@ -20,12 +20,18 @@ export class AboutPageComponent implements OnInit {
   user: any;
   news: any[] = [];
   newsImgs: any[] = [];
+  loading: Boolean = false;
 
   urls: String[] = [
     'https://gene-aapi.herokuapp.com/https://disrupt-africa.com/category/region/east-africa/feed/',
+    'https://gene-aapi.herokuapp.com/https://disrupt-africa.com/feed/',
     `https://gene-aapi.herokuapp.com/`
   ]
+  
   currentURL: String = this.urls[0];
+  currentURLIndex: number = 0;
+
+
   constructor(private newService: NewsService, 
     private domSanitizer: DomSanitizer, private _http: HttpClient) {
     this.getNews()    
@@ -34,8 +40,18 @@ export class AboutPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  changeCurrentFeed(index: number) {
+    this.currentURLIndex = index;
+    this.currentURL = this.urls[index]    
+    this.getNews()
+    console.log(this.newsImgs);
+    
+  }
+
   fetchMeta(news: any[]) {
     const domParser = new DOMParser()
+    this.newsImgs = []
     let HTTPOptions:Object = {
 
       headers: new HttpHeaders({
@@ -50,12 +66,14 @@ export class AboutPageComponent implements OnInit {
       metaImgs.forEach(tag => {
         let tmpImg = tag.getAttribute("content");
         this.newsImgs.push(tmpImg)
+        this.loading = false;
       });
     })
   })
 }
   
   getNews() {    
+    this.loading = true;
     let tmp = this.newService.getNewsFromServer(this.currentURL)
     tmp.subscribe(response => {
       let xmlParsedText = parser.parse(response);

@@ -13,7 +13,7 @@ export class Id8IconSVGComponent {;
   }
 
   ngOnChanges() {
-    console.log(this.yPosition);
+    // console.log(this.yPosition);
     // manipulate data here
   }
 

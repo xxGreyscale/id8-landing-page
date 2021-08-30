@@ -47,36 +47,46 @@
             <div class="d-flex category-header mt-3" style="justify-content: space-between;">
                 <div class="my-auto ml-auto">
                     <ul class="news-nav">
-                        <li class="news-nav-item active">
+                        <li class="news-nav-item" 
+                                [ngClass]="{'active': currentURLIndex === 0}" 
+                                (click)="changeCurrentFeed(0)">
                             East Africa
                         </li>
     
-                        <li class="news-nav-item">
-                            Africe
+                        <li class="news-nav-item" 
+                                [ngClass]="{'active': currentURLIndex === 1}" 
+                                (click)="changeCurrentFeed(1)">
+                            Africa
                         </li>
     
-                        <li class="news-nav-item">
+                        <li class="news-nav-item"
+                                [ngClass]="{'active': currentURLIndex === 2}" 
+                                (click)="changeCurrentFeed(2)">
                             Global
                         </li>
                     </ul>
                 </div>
                 <div class="pagination-text mt-4 my-md-auto my-lg-auto">
                     <span>
-                        4 out of 5 News
+                        RSS Subscribed to Africa disrupt
                     </span>
                 </div>
             </div>
         </div>
         <!-- News grid down here -->
-
-        <div class="tiles my-5" >
+        <div class="tiles d-flex justify-content-center p-5" *ngIf="loading">
+            <div class="spinner-grow text-danger mx-auto" style="width: 5rem; height: 5rem;" role="status">
+                <span class="sr-only d-block mx-auto"></span>
+              </div>
+        </div>
+        <div class="tiles my-5" *ngIf="news.length > 0 && !loading">
             <div class="tile-item" *ngFor="let new of news; let i = index; first as isFirst" 
                                 [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
                 <div class="news-container h-100">
-                    <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
+                    <!-- <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
 
-                    </div>
-                    <div class="img-container" *ngIf="currentURL === urls[0]">
+                    </div> -->
+                    <div class="img-container">
                         <img [src]="newsImgs[i]">
                     </div>
                     <p class="news-tag">
