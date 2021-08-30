@@ -45,6 +45,18 @@ footer {
     }
 }
 
+a.footer-link {
+    text-decoration: none;
+    position: relative;
+    color: var(--id-white);
+    opacity: .77;
+}
+
+a.footer-link:hover {
+    color: var(--id-primary-color);
+    opacity: .7;
+}
+
 .caption {
     font-size: .84rem;
 }
@@ -52,6 +64,12 @@ footer {
 .nav-item {
     margin: .275rem 0rem;
     font-size: 1rem;
+}
+
+.nav-item.active {
+    a {
+        color: var(--id-primary-color);
+    }
 }
 
 .nav-item:nth-child(1) {

@@ -11,6 +11,8 @@
                     429 Mahando Street, 104 Block C, <br />
                     Masaki, Dar es salaam
                 </p>
+                <img src="assets/svg/logo.svg" class="mt-2" width="360" alt="Id8 primary logo">
+
             </div>
             <div class="col-md col-lg-4 justify-content-end">
                 <h5>
@@ -20,14 +22,21 @@
                 </h5>
 
                 <ul class="nav text-white my-4 justify-content-space-between" style="flex-direction: column;">
-                    <li class="nav-item">
-                        Home
+                    
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === undefined}">
+                        <a class="footer-link" href="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item" [ngClass]="{'active': pageUrl === 'about-us'}">
+                        <a class="footer-link" href="/about-us">
+                            About id8.space
+                        </a>
                     </li>
                     <li class="nav-item">
-                        About id8.space
-                    </li>
-                    <li class="nav-item">
-                        Login
+                        <a class="footer-link" target="_blank" href="https://app.id8.space/auth/login">
+                            Login
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -64,32 +73,26 @@
                     <li>
                         &#169; 2021 id8 space. All rights reserved.
                     </li>
-                    <li>
-                        Terms of use
-                    </li>
-                    <li>
-                        Privacy policy
-                    </li>
                 </ul>
                 <ul class="footer-list right">
                     <li>
-                        <a href="#">
+                        <a href="https://twitter.com/id8space">
                             <img src="assets/svg/twitter-ico.svg" width="100%" height="100%" alt="twitter image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="assets/svg/facebook-ico.svg" width="100%" height="100%" alt="twitter image">
+                        <a href="https://www.facebook.com/id8space/">
+                            <img src="assets/svg/facebook-ico.svg" width="100%" height="100%" alt="facebook image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="assets/svg/instagram-ico.svg" width="100%" height="100%" alt="twitter image">
+                        <a href="https://www.instagram.com/id8space/">
+                            <img src="assets/svg/instagram-ico.svg" width="100%" height="100%" alt="instagram image">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <img src="assets/svg/linkedIn-ico.svg" width="100%" height="100%" alt="twitter image">
+                        <a href="https://www.linkedin.com/company/id8-space">
+                            <img src="assets/svg/linkedIn-ico.svg" width="100%" height="100%" alt="linkedIn image">
                         </a>
                     </li>
                 </ul>

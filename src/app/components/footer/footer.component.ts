@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  pageUrl: String = '';
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+    this.pageUrl = this.location.path();
+    this.pageUrl = this.pageUrl.split('/')[1]
   }
 
 }
