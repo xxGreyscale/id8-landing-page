@@ -79,25 +79,25 @@
                 <span class="sr-only d-block mx-auto"></span>
               </div>
         </div>
-        <div class="tiles my-5" *ngIf="news.length > 0 && !loading">
-            <div class="tile-item" *ngFor="let new of news; let i = index; first as isFirst" 
+        <div class="tiles my-5" *ngIf="newsWithImg.length > 0 && !loading">
+            <div class="tile-item" *ngFor="let element of newsWithImg; let i = index; first as isFirst" 
                                 [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
                 <div class="news-container h-100">
                     <!-- <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
 
                     </div> -->
                     <div class="img-container">
-                        <img [src]="newsImgs[i]">
+                        <img [src]="element?.image">
                     </div>
                     <p class="news-tag">
-                        {{new?.category[1]}}
+                        {{element?.news?.category[1]}}
                     </p>
                     <div class="news-title">
                         <p class="w-100 " >
-                            {{new?.title}}
+                            {{element?.news?.title}}
                         </p>
                         <caption>
-                            {{new?.pubDate}}
+                            {{element?.news?.pubDate}}
                         </caption>
                     </div>
                 </div>

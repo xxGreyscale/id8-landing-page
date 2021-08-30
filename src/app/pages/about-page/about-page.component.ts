@@ -19,7 +19,7 @@ export class AboutPageComponent implements OnInit {
 
   user: any;
   news: any[] = [];
-  newsImgs: any[] = [];
+  newsWithImg: any[] = [];
   loading: Boolean = false;
 
   urls: String[] = [
@@ -32,8 +32,7 @@ export class AboutPageComponent implements OnInit {
   currentURLIndex: number = 0;
 
 
-  constructor(private newService: NewsService, 
-    private domSanitizer: DomSanitizer, private _http: HttpClient) {
+  constructor(private newService: NewsService, private _http: HttpClient) {
     this.getNews()    
    }
 
@@ -44,14 +43,12 @@ export class AboutPageComponent implements OnInit {
   changeCurrentFeed(index: number) {
     this.currentURLIndex = index;
     this.currentURL = this.urls[index]    
-    this.getNews()
-    console.log(this.newsImgs);
-    
+    this.getNews()    
   }
 
   fetchMeta(news: any[]) {
     const domParser = new DOMParser()
-    this.newsImgs = []
+    this.newsWithImg = []
     let HTTPOptions:Object = {
 
       headers: new HttpHeaders({
@@ -65,7 +62,11 @@ export class AboutPageComponent implements OnInit {
       let metaImgs: any[] = responseString.head.querySelectorAll("meta[property='og:image']")
       metaImgs.forEach(tag => {
         let tmpImg = tag.getAttribute("content");
-        this.newsImgs.push(tmpImg)
+        let newsWithImage = {
+          news: element,
+          image: tmpImg
+        }
+        this.newsWithImg.push(newsWithImage)
         this.loading = false;
       });
     })
@@ -79,6 +80,7 @@ export class AboutPageComponent implements OnInit {
       let xmlParsedText = parser.parse(response);
       this.news = xmlParsedText.rss.channel.item;
       this.news = this.news.slice(0,4)
+      
       this.fetchMeta(this.news)
     })
   }
