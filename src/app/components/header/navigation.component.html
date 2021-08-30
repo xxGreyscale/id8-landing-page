@@ -14,6 +14,7 @@
                 <li class="nav-item mx-4">
                     <a class="nav-link" 
                                     [ngClass]="{'text-white': yPosition < 100 && pageUrl === undefined, 'text-black': pageUrl !== undefined}" 
+                                    target="_blank"
                                     href="https://app.id8.space/">
                         <b>
                             Login 
@@ -36,14 +37,14 @@
                         <a class="nav-link" href="about-us">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
+                        <a class="nav-link" (click)="goToContactsForm()">Contacts</a>
                     </li>
                 </ul>
 
                 <form *ngIf="!isCollapsed" class="d-flex justify-content-end align-items-center mx-3 ml-5 my-2 my-lg-0">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Login </a>
+                            <a class="nav-link" target="_blank"  href="https://app.id8.space/">Login </a>
                         </li>
                         <li class="nav-item mx-3">
                             <app-search-ico-svg [yPosition]="yPosition"></app-search-ico-svg>

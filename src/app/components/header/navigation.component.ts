@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
-import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +24,7 @@ export class HeaderComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed
   }
 
-  constructor(private location: Location, private userService: UserService) { 
+  constructor(private location: Location, private myElement: ElementRef) { 
     
   }
   
@@ -40,6 +39,16 @@ export class HeaderComponent implements OnInit {
 
     // this.userService.authentication()
     
+  }
+
+  goToContactsForm() {
+   document.getElementById("contacts-form")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest"
+   })
+
+   document.getElementById("contact-email")?.focus()
   }
 
 }
