@@ -59,6 +59,7 @@ img.carousel-image, .custom-bg {
         height: calc(752px + 2rem);
     }
 
+
 }
 
 .custom-bg {
@@ -90,8 +91,6 @@ img.carousel-image, .custom-bg {
 .carousel-title::before {
     content: "";
     background: url('../../../assets/img/molecule.png') no-repeat 0 0;
-    top: 0rem;
-    height: 560px;
     display: block;
     position: absolute;
     width: 128%;
@@ -100,11 +99,29 @@ img.carousel-image, .custom-bg {
     object-fit: contain;
     background-size: cover;
     left: -1rem;
+
+    @media only screen and (max-width: 764px) {
+        height: 704px;
+        width: 158%;
+        left: 0rem;
+        top: -10rem;
+    }
     
     @media only screen and (min-width: 764px) {
         height: 768px;
-        left: -2rem;
+        left: -1rem;
+        width: 140%;
+        top: -16rem;
+    }
+
+    @media only screen and (min-width: 991.58px) {
+        width: 128%;
+        top: -15rem;
+    }
+
+    @media only screen and (min-width: 1200.58px) {        
         width: inherit;
+        left: -2rem;
         top: -14rem;
     }
 }
