@@ -320,7 +320,7 @@ section:first-child {
         padding-bottom: 0rem;
 
         .carousel-indicators {
-            width: 75%;
+            width: 50%;
             bottom: -2%;
             margin: 0rem;
         }
@@ -362,6 +362,10 @@ section:first-child {
             flex-wrap: wrap-reverse;
         }
 
+        .carousel-indicators {
+            bottom: -15%;
+        }
+
         .carousel-text {
             height: 5rem;
         }
@@ -384,6 +388,14 @@ section:first-child {
             width: 80%;
         }
 
+    }
+
+    .carousel-container {
+        .carousel-indicators {
+            width: 75%;
+            bottom: -2%;
+            margin: 0rem;
+        }
     }
 }
 
@@ -656,11 +668,11 @@ section:first-child {
 
 
 @keyframes typewriter {
-    50% {
+    10% {
         left: 100%;
     }
 
-    75% {
+    90% {
         left: 100%;
     }
 

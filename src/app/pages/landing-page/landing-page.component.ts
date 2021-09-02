@@ -50,7 +50,7 @@ export class LandingPageComponent implements OnInit {
     `<span class="changing-text connect"> Connect. </span>`,
   ]
 
-  titleTimeout = 5000
+  titleTimeout = 10000
   carouselTimeout = this.titleTimeout
 
   currentTitleIndex = 0;
