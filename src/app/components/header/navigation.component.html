@@ -13,7 +13,8 @@
             <ul class="navbar-nav login-link" style="margin-left: 0rem">
                 <li class="nav-item mx-4">
                     <a class="nav-link" 
-                                    [ngClass]="{'text-white': yPosition < 100 && pageUrl === undefined, 'text-black': pageUrl !== undefined}" 
+                                    [ngClass]="{'text-white': !isCollapsed &&yPosition < 100 && pageUrl === undefined, 
+                                                'text-black': isCollapsed || pageUrl !== undefined}" 
                                     target="_blank"
                                     href="https://app.id8.space/">
                         <b>
@@ -22,7 +23,12 @@
                     </a>
                 </li>
             </ul>
-            <button (click)="onHambugerClick()" class="navbar-toggle x collapsed ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button (click)="onHambugerClick()" class="navbar-toggler x collapsed ml-auto" 
+                        type="button" 
+                        id="toggler"
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

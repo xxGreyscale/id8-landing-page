@@ -14,8 +14,10 @@
     margin: 4px;
 }
 
-.navbar-toggle {
-	border: none;
+.navbar-toggler {
+	border: 0px solid #ddd;
+    color: transparent !important;
+
 }
 
 .login-link {
@@ -163,7 +165,7 @@ ul.navbar-nav {
 
 @media only screen and (max-width: 767.88px){
 
-    .navbar-toggle {
+    .navbar-toggler {
         display: block;
     }
     .collapse.navbar-collapse {
@@ -204,6 +206,7 @@ ul.navbar-nav {
 
     .login-link {
         display: block;
+        z-index: 1;
         a.nav-link.text-black {
             color: var(--id-black) !important;
         }
@@ -223,7 +226,7 @@ ul.navbar-nav {
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        button.navbar-toggle, a.navbar-brand {
+        button.navbar-toggler, a.navbar-brand {
             z-index: 1;
         }
     }
@@ -254,6 +257,14 @@ ul.navbar-nav {
             a.nav-link {
                 color: var(--id-black);
             }
+        }
+
+        .nav-item {
+            a.nav-link {
+                font-size: 1.3em;
+            }
+
+
         }
 
     }
@@ -295,7 +306,7 @@ ul.navbar-nav {
 
 
 /* ANIMATED X */
-.navbar-toggle.x .icon-bar:nth-of-type(1) {
+.navbar-toggler.x .icon-bar:nth-of-type(1) {
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
@@ -304,12 +315,12 @@ ul.navbar-nav {
 	transform-origin: 10% 10%;
 }
 
-.navbar-toggle.x .icon-bar:nth-of-type(2) {
+.navbar-toggler.x .icon-bar:nth-of-type(2) {
 	opacity: 0;
 	filter: alpha(opacity=0);
 }
 
-.navbar-toggle.x .icon-bar:nth-of-type(3) {
+.navbar-toggler.x .icon-bar:nth-of-type(3) {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
@@ -319,18 +330,18 @@ ul.navbar-nav {
 }
 
 /* ANIMATED X COLLAPSED */
-.navbar-toggle.x.collapsed .icon-bar:nth-of-type(1) {
+.navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
 	-webkit-transform: rotate(0);
 	-ms-transform: rotate(0);
 	transform: rotate(0);
 }
 
-.navbar-toggle.x.collapsed .icon-bar:nth-of-type(2) {
+.navbar-toggler.x.collapsed .icon-bar:nth-of-type(2) {
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
 
-.navbar-toggle.x.collapsed .icon-bar:nth-of-type(3) {
+.navbar-toggler.x.collapsed .icon-bar:nth-of-type(3) {
 	-webkit-transform: rotate(0);
 	-ms-transform: rotate(0);
 	transform: rotate(0);

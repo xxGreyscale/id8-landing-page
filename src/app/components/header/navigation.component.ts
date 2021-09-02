@@ -48,6 +48,17 @@ export class HeaderComponent implements OnInit {
     inline: "nearest"
    })
 
+   let toggler = document.getElementById("toggler")
+   let navbar = document.getElementById("navbarNav")
+
+   if(this.isCollapsed) {
+     toggler?.setAttribute('aria-expanded', 'false');
+     toggler?.classList.add('collapsed')
+     navbar?.classList.remove("show")
+     this.isCollapsed = !this.isCollapsed;
+   }
+
+
    document.getElementById("contact-email")?.focus()
   }
 
