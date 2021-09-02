@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/navigation.component';
 import { SvgComponentsModule } from '../svg-components/svg-components.module';
+import { SocialsComponent } from './socials/socials.component';
 
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    SocialsComponent
   ],
   imports: [
     SvgComponentsModule,
