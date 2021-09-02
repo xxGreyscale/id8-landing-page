@@ -3,7 +3,7 @@ section#not_found_page {
     height: 100%;
     display: flex;
     align-items: center;
-    div {
+    div.error-block {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -16,5 +16,30 @@ section#not_found_page {
             font-weight: 500;
             border: 1px solid #ddd
         }
+    }
+}
+
+div.socials {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &::ng-deep {
+        ul {
+            justify-content: center;
+            width: 100%;
+            margin-bottom: .275rem;
+        }
+        li {
+            margin: 0rem .5rem;
+            width: max-content;
+        }
+        li:nth-child(1) {
+            margin-left: 0rem;
+        }
+        img {
+            max-width: 99%;
+        }
+
     }
 }
