@@ -112,27 +112,28 @@ button, a.btn {
     &.no-border {
         border: solid 0px var(--id-black);
     }
+    
+    &.btn-accent {
+        background-color: var(--id-accent) !important;
+        color: var(--id-white) !important;
+    }
+    
+    &.btn-primary {
+        background-color: var(--id-primary-color) !important;
+        color: var(--id-black) !important;
+    }
+    
+    &.btn-secondary {
+        background-color: var(--id-secondary) !important;
+        color: var(--id-white) !important;
+    }
+    
+    &.btn-white {
+        background-color: var(--id-white) !important;
+        color: var(--id-black) !important;
+    }
 }
 
-button, a.btn.btn-accent {
-    background-color: var(--id-accent) !important;
-    color: var(--id-white) !important;
-}
-
-button, a.btn.btn-primary {
-    background-color: var(--id-primary-color) !important;
-    color: var(--id-black) !important;
-}
-
-button, a.btn.btn-secondary {
-    background-color: var(--id-secondary) !important;
-    color: var(--id-white) !important;
-}
-
-button, a.btn.btn-white {
-    background-color: var(--id-white) !important;
-    color: var(--id-black) !important;
-}
 
 p {
     
