@@ -69,24 +69,24 @@
     }
 
     .word:not(.icon) {
-        animation: dissolve-word ease-in 1s forwards;
-        animation-delay: .7s;
+        animation: dissolve-word ease-in .3s forwards;
+        animation-delay: .5s;
         transition: all ease-in .5s;
     }
 
     #word-mark {
-        animation: push-back ease-in .5s forwards;
-        animation-delay: .8s;
+        animation: push-back ease-in .4s forwards;
+        animation-delay: .5s;
         transition: all ease-in 1s;
     }
     #orange-note {
-        animation: hide-orange ease-in 1s forwards;
+        animation: hide-orange ease-in .8s forwards;
         // animation-delay: .2s;
         transition: all ease-in 1s;
     }
     
     #yellow-note {
-        animation: hide-yellow ease-in 1s forwards;
+        animation: hide-yellow ease-in .8s forwards;
         // animation-delay: .2s;
         transition: all ease-in 1s;
     }
