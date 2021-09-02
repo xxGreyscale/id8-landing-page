@@ -13,6 +13,7 @@ import { MessageService } from '../services/message/message.service';
 import { NewsService } from '../services/news/news.service';
 import { UserService } from '../services/user/user.service';
 import { PagesComponent } from './pages.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PagesComponent } from './pages.component';
     PagesComponent,
     LandingPageComponent,
     AboutPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule,

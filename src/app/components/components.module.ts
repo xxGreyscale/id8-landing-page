@@ -18,6 +18,7 @@ import { SocialsComponent } from './socials/socials.component';
     CommonModule,
   ],
   exports: [
+    SocialsComponent,
     FooterComponent,
     HeaderComponent,
   ]
