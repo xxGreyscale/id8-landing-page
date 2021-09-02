@@ -10,25 +10,17 @@ import { SvgComponentsModule } from './svg-components/svg-components.module';
 import { HttpErrorHandler } from './services/error-handler/http-error-handler.service';
 import { MessageService } from './services/message/message.service';
 import { UserService } from './services/user/user.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    // HttpErrorHandler,
-    ComponentsModule,    
-    SvgComponentsModule,
     AppRoutingModule,
-  ],
-  providers: [
-    MessageService,
-    HttpErrorHandler,
-    UserService,
-    NewsService,
-
   ],
   bootstrap: [AppComponent]
 })
