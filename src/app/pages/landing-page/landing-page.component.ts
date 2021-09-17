@@ -22,22 +22,22 @@ export class LandingPageComponent implements OnInit {
   carousels: any[] = [
     {
       content: 
-      `Take you innovative business idea to the next level and join tailored programs
-       that include access to exclusive development support dedicated workshops and mentors`,
+      `Take your business idea to the next level and join 
+      tailored programs that include access to exclusive development support dedicated workshops and mentors.`,
       image: 'assets/img/lightbulb.png',
 
     },
     {
       content: 
-      `A space connecting people & ideas to business resources;
-       promoting collaboration and sharing of collective knowledge to support your journey.`,
+      `A space connecting people & ideas to business resources; 
+      promoting collaboration and knowledge-sharing to support your journey.`,
       image: 'assets/img/paper-on-wall.png'
 
     },
     {
       content: 
-      `A community of experts, seasoned and emerging entrepreneurs refining their business ideas 
-      and developing skills necessary to build a strong bedrock in leading a competitive tech product or business.`,
+      `A community of emerging entrepreneurs refining their business ideas and developing skills 
+      necessary to build a strong bedrock in leading a competitive tech product or business.`,
       image: 'assets/img/VR.png'
 
     }
