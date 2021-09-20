@@ -37,7 +37,41 @@
     </div>
 </section>
 
-<section id="news_section" class="w-100 bg-white">
+
+<section class="third fold w-100 mt-5 mb-5">
+    <div class="d-flex container fold-container w-100 pb-3">
+        <h2 class="mt-5 mb-3">
+            Our partners
+        </h2>
+        <div class="d-flex partners-logo w-100 my-5">
+            <a href="https://finmark.org.za/">
+                <img src="assets/img/fmt.png" alt="fmt logo" width="184" height="100%">
+            </a>
+            <a href="https://www.liquidtelecom.com/">
+                <img src="assets/img/liquid.png" alt="Liquid telecoms logo" width="184" height="100%">
+            </a>
+            <a href="https://www.microsoft.com/africa/4afrika/">
+                <img src="assets/img/4africa.png" alt="Microsofts 4africa logo" width="184" height="100%">
+            </a>
+
+            <a href="http://www.datahack4fi.org/">
+                <img src="assets/img/insight.png" alt="Insights impact logo" width="184" height="100%">
+            </a>
+            <a>
+              <img src="https://id8.space/wp-content/uploads/2019/05/B-B_Logo-3.png" 
+                    alt="bits and bites logo" 
+                    width="184" height="100%">  
+            </a>
+            <a href="https://2050.org.cn/en/">
+                <img src="https://id8.space/wp-content/uploads/2019/05/2050.png" alt="2050 logo" width="184" height="100%">
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- <section id="news_section" class="w-100 bg-white">
     <div class="d-block container-xl my-5">
         <div class="d-flex news-header w-100" style="justify-content: space-between; ">
             <h2 class="">
@@ -72,9 +106,10 @@
                     </span>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <!-- News grid down here -->
-        <div class="tiles d-flex justify-content-center p-5" *ngIf="loading">
+        <!-- <div class="tiles d-flex justify-content-center p-5" *ngIf="loading">
             <div class="spinner-grow text-danger mx-auto" style="width: 5rem; height: 5rem;" role="status">
                 <span class="sr-only d-block mx-auto"></span>
               </div>
@@ -83,9 +118,6 @@
             <div class="tile-item" *ngFor="let element of newsWithImg; let i = index; first as isFirst" 
                                 [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
                 <div class="news-container h-100">
-                    <!-- <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
-
-                    </div> -->
                     <div class="img-container">
                         <img [src]="element?.image">
                     </div>
@@ -120,4 +152,4 @@
         </div>
 
     </div>
-</section>
+</section> -->

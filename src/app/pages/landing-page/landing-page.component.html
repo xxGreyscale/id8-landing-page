@@ -13,11 +13,11 @@
     
                     <form action="">
                         <div class="form-group">
-                            <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="Email">
+                            <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="ex. joe.doe@id8.space">
                           </div>
           
                           <div class="form-group">
-                              <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="Password">
+                              <input type="text" class="form-control drawy-lines" name="" id="" aria-describedby="helpId" placeholder="**********">
                               <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
                             </div>
 
@@ -67,9 +67,15 @@
                             <p class="carousel-text text-white my-5" [innerHTML]="currentCarousel.content">
                             </p>
                             <div class="carousel-indicators">
-                                <div [ngClass]="{'active': currentCarouselIndex === 0, 'carousel-indicator': carousels}"></div>
-                                <div [ngClass]="{'active': currentCarouselIndex === 1, 'carousel-indicator': carousels}"></div>
-                                <div [ngClass]="{'active': currentCarouselIndex === 2, 'carousel-indicator': carousels}"></div>
+                                <div (click)="onIndicatorClicked(0)" 
+                                    [ngClass]="{'active': currentCarouselIndex === 0, 'carousel-indicator': carousels}">
+                                </div>
+                                <div (click)="onIndicatorClicked(1)" 
+                                    [ngClass]="{'active': currentCarouselIndex === 1, 'carousel-indicator': carousels}">
+                                </div>
+                                <div (click)="onIndicatorClicked(2)" 
+                                    [ngClass]="{'active': currentCarouselIndex === 2, 'carousel-indicator': carousels}">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -139,7 +145,92 @@
     </div>
 </section>
 
-<section class="third fold w-100">
+<section id="news_section" class="w-100 bg-white">
+    <div class="d-block container-xl">
+        <div class="d-flex news-header w-100" style="justify-content: space-between; ">
+            <h2 class="">
+                New and Updates
+            </h2>
+
+            <div class="d-flex category-header mt-3" style="justify-content: space-between;">
+                <div class="my-auto ml-auto">
+                    <ul class="news-nav">
+                        <li class="news-nav-item" 
+                                [ngClass]="{'active': currentURLIndex === 0}" 
+                                (click)="changeCurrentFeed(0)">
+                            East Africa
+                        </li>
+    
+                        <li class="news-nav-item" 
+                                [ngClass]="{'active': currentURLIndex === 1}" 
+                                (click)="changeCurrentFeed(1)">
+                            Africa
+                        </li>
+    
+                        <li class="news-nav-item"
+                                [ngClass]="{'active': currentURLIndex === 2}" 
+                                (click)="changeCurrentFeed(2)">
+                            Global
+                        </li>
+                    </ul>
+                </div>
+                <div class="pagination-text mt-4 my-md-auto my-lg-auto">
+                    <span>
+                        <img src="assets/img/rss.png" width="40"> Subscribed to Africa disrupt
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- News grid down here -->
+        <div class="tiles d-flex justify-content-center p-5" *ngIf="loading">
+            <div class="spinner-grow text-danger mx-auto" style="width: 5rem; height: 5rem;" role="status">
+                <span class="sr-only d-block mx-auto"></span>
+              </div>
+        </div>
+        <div class="tiles my-5" *ngIf="newsWithImg.length > 0 && !loading">
+            <div class="tile-item" *ngFor="let element of newsWithImg; let i = index; first as isFirst" 
+                                [ngClass]="{'tile-one': isFirst, 'tile-two': i === 1, 'tile-three': i === 2, 'tile-four': i === 3}">
+                <div class="news-container h-100">
+                    <!-- <div class="img-container" *ngIf="currentURL === urls[1]" [innerHTML]="new?.description">
+
+                    </div> -->
+                    <div class="img-container">
+                        <img [src]="element?.image">
+                    </div>
+                    <p class="news-tag">
+                        {{element?.news?.category[1]}}
+                    </p>
+                    <div class="news-title">
+                        <p class="w-100 " >
+                            {{element?.news?.title}}
+                        </p>
+                        <caption>
+                            {{element?.news?.pubDate}}
+                        </caption>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="progress-section w-100">
+            <div class="progress my-auto w-50">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="controls">
+                  <div class="">
+                      <img src="assets/svg/forward-ico.svg" alt="back-btn">
+                  </div>
+                  <div class="">
+                    <img src="assets/svg/back-ico.svg" alt="back-btn">
+                </div>
+              </div>
+        </div> -->
+
+    </div>
+</section>
+
+<!-- <section class="third fold w-100">
     <div class="d-flex fold-container w-100 pb-3">
         <h2 class="mx-auto mb-5">
             Our partners
@@ -152,4 +243,6 @@
 
         </div>
     </div>
-</section>
+</section> -->
+
+

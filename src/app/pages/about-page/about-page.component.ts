@@ -33,7 +33,7 @@ export class AboutPageComponent implements OnInit {
 
 
   constructor(private newService: NewsService, private _http: HttpClient) {
-    this.getNews()    
+    // this.getNews()    
    }
 
   ngOnInit(): void {

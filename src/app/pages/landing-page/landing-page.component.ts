@@ -1,7 +1,10 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HostListener } from '@angular/core';
-import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, OnInit, SimpleChange } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { NewsService } from 'src/app/services/news/news.service';
+
+declare var require: any;
+var parser = require('fast-xml-parser');
 
 @Component({
   selector: 'app-landing-page',
@@ -57,30 +60,63 @@ export class LandingPageComponent implements OnInit {
   currentCarouselIndex = 0;
   currentTitle = this.titles[this.currentTitleIndex];
   heading: any;
+  changeTitleVar: any;
+  changeCarouselVar: any;
 
-  currentCarousel: any; 
+  currentCarousel: any;
+  
+  // news
+  user: any;
+  news: any[] = [];
+  newsWithImg: any[] = [];
+  loading: Boolean = false;
 
 
-  // function
+  urls: String[] = [
+    'https://gene-aapi.herokuapp.com/https://disrupt-africa.com/category/region/east-africa/feed/',
+    'https://gene-aapi.herokuapp.com/https://disrupt-africa.com/feed/',
+    `https://gene-aapi.herokuapp.com/`
+  ]
+  
+  currentURL: String = this.urls[0];
+  currentURLIndex: number = 0;
+
+
+
+
+  // functions for carousel
   changeTitle = () => {
     this.currentTitleIndex = (this.currentTitleIndex + 1)%this.titles.length
-    setTimeout(this.changeTitle, this.titleTimeout);
+    this.changeTitleVar = setTimeout(this.changeTitle, this.titleTimeout);
   }
 
   changeCarouselContents = () => {
     this.currentCarouselIndex = (this.currentCarouselIndex + 1)%this.carousels.length
-    setTimeout(this.changeCarouselContents, this.carouselTimeout);
+    this.changeCarouselVar = setTimeout(this.changeCarouselContents, this.carouselTimeout);
   }
 
   getYPosition(e: Event): number {
     return (e.target as Element).scrollTop;
   }
+
+  onIndicatorClicked = (index: number) => {
+    this.currentTitleIndex = index
+    this.currentCarouselIndex = index
+    // reset the title timeout
+    this.titleTimeout = 10001
+    this.carouselTimeout = this.titleTimeout
+  }
   
   ngDoCheck() {
+
+    // check for title timeout change
+    if(this.titleTimeout > 10000) {
+      this.titleTimeout = 100000
+      this.heading = this.titles[this.currentTitleIndex]
+      this.currentCarousel = this.carousels[this.currentCarouselIndex]
+    }
     if (this.currentTitleIndex >= 0) {
       this.heading = this.titles[this.currentTitleIndex]
-      // console.log(this.heading);
-      
     }
 
     if(this.currentCarouselIndex >= 0) {
@@ -89,15 +125,63 @@ export class LandingPageComponent implements OnInit {
     
   }
 
-  constructor() {
+  constructor(private newService: NewsService, private _http: HttpClient) {
+    this.getNews()
     this.changeTitle();
     this.changeCarouselContents()
   }
   
+
   ngOnInit(): void {
-   
-    // this.heading = new BehaviorSubject(this.titles[this.currentTitleIndex]);
-    // this.currentCarousel = new BehaviorSubject(this.carousels[this.currentCarouselIndex])
   }
+ 
+
+  // News methods here
+
+  changeCurrentFeed(index: number) {
+    this.currentURLIndex = index;
+    this.currentURL = this.urls[index]    
+    this.getNews()    
+  }
+
+  fetchMeta(news: any[]) {
+    const domParser = new DOMParser()
+    this.newsWithImg = []
+    let HTTPOptions:Object = {
+
+      headers: new HttpHeaders({
+      }),
+      responseType: 'text'
+   }
+
+    news.forEach(element => {
+      this._http.get(`https://gene-aapi.herokuapp.com/${element.guid}`, HTTPOptions).subscribe(response => {
+      let  responseString: any = domParser.parseFromString(response.toString(), 'text/html')
+      let metaImgs: any[] = responseString.head.querySelectorAll("meta[property='og:image']")
+      metaImgs.forEach(tag => {
+        let tmpImg = tag.getAttribute("content");
+        let newsWithImage = {
+          news: element,
+          image: tmpImg
+        }
+        this.newsWithImg.push(newsWithImage)
+        this.loading = false;
+      });
+    })
+  })
+}
+  
+  getNews() {    
+    this.loading = true;
+    let tmp = this.newService.getNewsFromServer(this.currentURL)
+    tmp.subscribe(response => {
+      let xmlParsedText = parser.parse(response);
+      this.news = xmlParsedText.rss.channel.item;
+      this.news = this.news.slice(0,4)
+      
+      this.fetchMeta(this.news)
+    })
+  }
+
 
 }
