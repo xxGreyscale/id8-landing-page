@@ -131,7 +131,6 @@ socialLinks: any = {
   }
 
   onIndicatorClicked = (index: number) => {
-    this.currentTitleIndex = index
     this.currentCarouselIndex = index
     // reset the title timeout
     this.titleTimeout = 10001
@@ -143,7 +142,6 @@ socialLinks: any = {
     // check for title timeout change
     if(this.titleTimeout > 10000) {
       this.titleTimeout = 100000
-      this.heading = this.titles[this.currentTitleIndex]
       this.currentCarousel = this.carousels[this.currentCarouselIndex]
     }
     if (this.currentTitleIndex >= 0) {
