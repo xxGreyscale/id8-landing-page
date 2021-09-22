@@ -105,8 +105,7 @@ button, a.btn {
     border-top-right-radius: 15px 225px !important;
     border-bottom-right-radius: 225px 15px !important;
     border-bottom-left-radius: 15px 255px !important;
-    background-color: var(--id-primary-color) !important;
-    color: var(--id-black) !important;
+    color: var(--id-black);
     font-weight: 700;
 
     &.no-border {
@@ -114,24 +113,29 @@ button, a.btn {
     }
     
     &.btn-accent {
-        background-color: var(--id-accent) !important;
+        background-color: var(--id-accent);
         color: var(--id-white) !important;
     }
     
     &.btn-primary {
-        background-color: var(--id-primary-color) !important;
+        background-color: var(--id-primary-color);
         color: var(--id-black) !important;
+        &:hover {
+            background-color: #f8b925;
+            transition: all ease-in .1s;
+        }
     }
     
     &.btn-secondary {
-        background-color: var(--id-secondary) !important;
+        background-color: var(--id-secondary);
         color: var(--id-white) !important;
     }
     
     &.btn-white {
-        background-color: var(--id-white) !important;
+        background-color: var(--id-white);
         color: var(--id-black) !important;
     }
+
 }
 
 
