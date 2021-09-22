@@ -14,12 +14,41 @@ var parser = require('fast-xml-parser');
 })
 export class LandingPageComponent implements OnInit {
 
+  apiURL: string = 'https://api.id8.space/api/'
   yPosition: any = 0;
 
   @HostListener('window:scroll', [`$event`]) onWindowScroll(): void {
     // console.log(window.scrollY);
     this.yPosition = window.scrollY;
  }
+
+
+socialLinks: any = {
+  google: {
+        url: this.apiURL + 'login/google',
+        target: '_self',
+        icon: 'google',
+        title: 'Google Plus',
+        color: '#DB4437'
+      },
+
+  facebook: {
+    url: this.apiURL + 'login/facebook',
+    target: '_self',
+    icon: 'facebook',
+    title: 'Facebook',
+    color: '#3b5998'
+  },
+
+  linkedin: {
+    url: this.apiURL + 'login/linkedin',
+    target: '_self',
+    icon: 'linkedin',
+    title: 'Linkedin',
+    color: '#4875B4'
+  }
+}
+
 
 
   carousels: any[] = [
@@ -182,6 +211,5 @@ export class LandingPageComponent implements OnInit {
       this.fetchMeta(this.news)
     })
   }
-
 
 }

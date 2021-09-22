@@ -162,11 +162,12 @@ ul {
       }
 
       li:hover {
+          opacity: .9;
           cursor: pointer;
-          transform: scale(.9);
-          animation-name: grow;
-          animation-duration: 1s;
-          animation-delay: .01s;
+          transform: scale(1);
+        //   animation-name: grow;
+        //   animation-duration: 1s;
+        //   animation-delay: 0s;
           -o-animation-timing-function: ease-in-out;
         //   animation-direction: alternate;
       }
