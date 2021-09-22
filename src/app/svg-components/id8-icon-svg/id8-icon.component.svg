@@ -1,5 +1,5 @@
 <svg id="id8-icon" class="logo-mark" [ngClass]="{'shrink': yPosition > 70}" 
-      xmlns="http://www.w3.org/2000/svg" width="inherit" height="inherit" viewBox="0 0 880.28 160.88">
+      xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 880.28 160.88">
 {{yPosition}}
     <g id="word-mark">
       <path id="i" class="icon word cls-1" d="M203.6,134q-9,0-13.92-5t-4.88-14.68V60.87a5.8,5.8,0,0,1,1.51-4.28,5.68,5.68,0,0,1,4.26-1.52h8.81a5.4,5.4,0,0,1,4.18,1.52A6,6,0,0,1,205,60.87v52.34c0,1.93.69,2.9,2.07,2.9a8.14,8.14,0,0,0,3.18-.75q3.63-1.33,5.18,3.35l1.78,6a6.67,6.67,0,0,1,.33,4,4.5,4.5,0,0,1-2.26,2.27A22.17,22.17,0,0,1,203.6,134Z" transform="translate(0 0)"/>
