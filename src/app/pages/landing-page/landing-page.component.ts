@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HostListener } from '@angular/core';
 import { Component, OnInit, SimpleChange } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
+import { Title, Meta } from '@angular/platform-browser';
 
 declare var require: any;
 var parser = require('fast-xml-parser');
@@ -14,6 +15,7 @@ var parser = require('fast-xml-parser');
 })
 export class LandingPageComponent implements OnInit {
 
+  title = 'Id8 Space'
   apiURL: string = 'https://api.id8.space/api/'
   yPosition: any = 0;
 
@@ -154,7 +156,10 @@ socialLinks: any = {
     
   }
 
-  constructor(private newService: NewsService, private _http: HttpClient) {
+  constructor(private newService: NewsService, 
+              private _http: HttpClient, 
+              private titleService: Title, 
+              private metaService: Meta) {
     this.getNews()
     this.changeTitle();
     this.changeCarouselContents()
@@ -162,6 +167,12 @@ socialLinks: any = {
   
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
+    this.metaService.addTags([
+      {name: 'keywords', content: 'hub, space, tanzania, 255, id8 space, id8, Dar es salaam, east africe, tech space, tech, technology'},
+      {name: 'description', content: 'A space connecting people & ideas to business resources; promoting collaboration and knowledge-sharing to support your journey.Angular Universal Example'},
+      {name: 'robots', content: 'index, follow'}
+    ]);
   }
  
 
