@@ -169,7 +169,7 @@ socialLinks: any = {
   ngOnInit(): void {
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
-      {name: 'keywords', content: 'hub, space, tanzania, 255, id8 space, id8, Dar es salaam, east africe, tech space, tech, technology'},
+      {name: 'keywords', content: 'tehama, computer, funding, hub, space, tanzania, 255, id8 space, id8, Dar es salaam, east africe, tech space, tech, technology'},
       {name: 'description', content: 'A space connecting people & ideas to business resources; promoting collaboration and knowledge-sharing to support your journey.Angular Universal Example'},
       {name: 'robots', content: 'index, follow'}
     ]);

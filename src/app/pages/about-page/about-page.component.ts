@@ -26,8 +26,8 @@ export class AboutPageComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle(this.title);
     this.metaService.addTags([
-      {name: 'keywords', content: 'hub, space, tanzania, 255, id8 space, id8, Dar es salaam, east africe, tech space, tech, technology'},
-      {name: 'description', content: 'A space connecting people & ideas to business resources; promoting collaboration and knowledge-sharing to support your journey.Angular Universal Example'},
+      {name: 'keywords', content: 'tehama, computer, funding, about id8, tech hub, space, tanzania, 255, id8 space, id8, Dar es salaam, east africe, tech space, tech, technology'},
+      {name: 'description', content: `A dynamic and evolving community of diverse visionaries. An environment designed to foster skills and accelerate the success of entrepreneurs. Take your innovative business idea to the next level and join tailored programs that includes access to exclusive development support dedicated workshops and mentors. Id8 aims to accelerate business innovation by building a bridge between world-leading research and the companies that are ambitious for growth in technology enabled markets.`},
       {name: 'robots', content: 'index, follow'}
     ]);
   }
