@@ -1,5 +1,13 @@
 
 
+
+// overides
+.container-xl {
+    @media only screen and (min-width: 1640px) {
+        max-width: 1440px;
+    }
+}
+
 .fold {
     padding-top: 8rem;
     overflow: hidden;

@@ -1,5 +1,12 @@
 
 
+// Overides
+.container-xl {
+    @media only screen and (min-width: 1640px) {
+        max-width: 1440px;
+    }
+}
+
 #navbarNav {transition: none;}
 // this code eliminates delay for the navbar, for this code that is
 
