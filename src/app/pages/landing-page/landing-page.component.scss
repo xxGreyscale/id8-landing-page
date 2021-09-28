@@ -803,7 +803,7 @@ section#news_section {
     // grid-template-columns: auto auto auto auto;
     grid-template-columns: repeat(1, minmax(0, 1fr));;
     grid-template-rows: repeat(1, minmax(10px, 1fr));
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x proximity;
     grid-gap: 1rem;
     
@@ -941,6 +941,11 @@ section#news_section {
         display: block;
         width: 100%;
         font-size: calc(.5rem + .35vw) !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* number of lines to show */
+        -webkit-box-orient: vertical;
     }
 
     &:hover {

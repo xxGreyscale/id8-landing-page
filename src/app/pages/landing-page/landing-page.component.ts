@@ -215,7 +215,7 @@ socialLinks: any = {
     tmp.subscribe(response => {
       let xmlParsedText = parser.parse(response);
       this.news = xmlParsedText.rss.channel.item;
-      this.news = this.news.slice(0,4)
+      this.news = this.news.slice(0,5)
       
       this.fetchMeta(this.news)
     })
