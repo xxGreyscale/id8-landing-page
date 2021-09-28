@@ -408,8 +408,8 @@ img.carousel-image, .custom-bg {
 
 
 .third.fold {
-    max-width: 1440px;
-
+    // max-width: 1440px;
+    margin: auto;
     .fold-container {
         justify-content: flex-start;
         flex-wrap: wrap;
