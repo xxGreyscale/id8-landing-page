@@ -5,6 +5,14 @@
     @media only screen and (min-width: 1640px) {
         max-width: 100%;
     }
+
+    @media only screen and (min-width: 992px) {
+        max-width: 100%;
+    }
+}
+
+.space-to {
+    font-family: var(--id8-secondary-font);
 }
 
 // *************** General html element **************************//
@@ -14,6 +22,10 @@ section {
     @media only screen and (min-width: 768px) {
         margin: 8rem auto;
     }
+
+    @media only screen and(min-width: 992px) {
+        max-width: 1320px !important;
+}
     @media only screen and(min-width: 1640px) {
             max-width: 1440px !important;
     }
@@ -183,7 +195,7 @@ section:first-child {
     color: var(--id-white);
     justify-content: flex-end;
     margin-left: auto;
-    padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*.5);
+    // padding: calc(var(--id-vt-spacing)*.5) calc(var(--rs-gutter)*.5);
     padding-top: calc(var(--id-vt-spacing)*1);
     padding-bottom: 0rem;
     overflow-y: hidden;

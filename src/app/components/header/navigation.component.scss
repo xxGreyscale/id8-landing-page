@@ -49,13 +49,15 @@ g#notes {
 
 .navbar-nav {
     .nav-item {
-        margin: 0rem .125rem;
+        margin: 0rem .375rem;
         cursor: pointer;
         img {
             fill: var(--id-white);
         }
         a.nav-link {
+            font-family: var(--id8-primary-font);
             position: relative;
+            font-weight: 600;
             color: var(--id-white);
             font-size: 1rem;
             opacity: .77;
