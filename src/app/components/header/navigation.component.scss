@@ -339,6 +339,10 @@ ul.navbar-nav {
 }
 
 /* ANIMATED X COLLAPSED */
+.navbar-toggler.x.collapsed .icon-bar {
+    background-color: #fff;
+    transition: all ease .4s;
+}
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
 	-webkit-transform: rotate(0);
 	-ms-transform: rotate(0);
