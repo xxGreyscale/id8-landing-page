@@ -57,7 +57,7 @@
                     <div class="form-group my-4">
                         <label for="">Email</label>
                         <input type="text" class="form-control" formControlName="email" placeholder="joe.doe@id8.space" name="email" id="contact-email" aria-describedby="emailId" >
-                        <small id="helpId" class="form-text text-muted">ex. joe.doe@id8.space</small>
+                        <small id="helpId" class="form-text text-muted" *ngIf="!email.touched">ex. joe.doe@id8.space</small>
                         <small class="text-danger font-weight-bold p-2" *ngIf="email.touched && email.invalid">
                             **Inavalid email
                         </small>
