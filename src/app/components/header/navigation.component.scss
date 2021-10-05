@@ -7,6 +7,25 @@
     }
 }
 
+.nav-link.btn {
+    margin: auto .5rem;
+    padding: .375rem;
+    width: max-content;
+    &.text-black, &.text-white {
+        padding: .5rem 1rem;
+        background-color: transparent;
+        line-height: 2.25;
+    }
+
+    &.text-white {
+        border: 1px solid var(--id-white);
+    }
+
+    &.text-black {
+        border: 1px solid var(--id-black);
+    }
+}
+
 #navbarNav {transition: none;}
 // this code eliminates delay for the navbar, for this code that is
 
@@ -15,7 +34,7 @@
 	width: 22px;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
-    background-color: black;
+    background-color: var(--id-black);
     display: block;
     height: 2px;
     margin: 4px;
@@ -24,6 +43,7 @@
 .navbar-toggler {
 	border: 0px solid #ddd;
     color: transparent !important;
+    width: max-content;
 
 }
 
@@ -144,7 +164,7 @@ ul.navbar-nav {
 }
 
 .brand-image {
-    width: 120%;
+    width: 110%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -227,7 +247,7 @@ ul.navbar-nav {
     }
 
     .brand-image {
-        width: 100%;
+        width: 120%;
     }
 
     .brand-section {
@@ -343,6 +363,16 @@ ul.navbar-nav {
     background-color: #fff;
     transition: all ease .4s;
 }
+
+.navbar-toggler.x.collapsed .icon-bar.bar-black {
+    background-color: var(--id-black);
+}
+
+.navbar-toggler.x.collapsed .icon-bar.about-page {
+    background-color: var(--id-black);
+    transition: all ease .4s;
+}
+
 .navbar-toggler.x.collapsed .icon-bar:nth-of-type(1) {
 	-webkit-transform: rotate(0);
 	-ms-transform: rotate(0);

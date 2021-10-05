@@ -11,10 +11,10 @@
         </a>
         <div class="d-flex align-items-center justify-content-end">
             <ul class="navbar-nav login-link" style="margin-left: 0rem">
-                <li class="nav-item mx-4">
-                    <a class="nav-link" 
-                                    [ngClass]="{'text-white': !isCollapsed &&yPosition < 100 && pageUrl === undefined, 
-                                                'text-black': isCollapsed || pageUrl !== undefined}" 
+                <li class="nav-item mx-0 ml-auto">
+                    <a class="nav-link btn" 
+                                    [ngClass]="{'text-white': !isCollapsed && yPosition < 100 && pageUrl === undefined, 
+                                                'text-black': isCollapsed || pageUrl !== undefined || yPosition > 100}" 
                                     target="_blank"
                                     href="https://app.id8.space/">
                         <b>
@@ -29,9 +29,12 @@
                         data-bs-toggle="collapse" 
                         data-bs-target="#navbarNav" 
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar" [ngClass]="{'about-page' : pageUrl !== undefined, 
+                                                    'bar-black': !isCollapsed &&yPosition > 100}"></span>
+                <span class="icon-bar" [ngClass]="{'about-page' : pageUrl !== undefined,
+                                                    'bar-black': !isCollapsed &&yPosition > 100}"></span>
+                <span class="icon-bar" [ngClass]="{'about-page' : pageUrl !== undefined,
+                                                    'bar-black': !isCollapsed &&yPosition > 100}"></span>
             </button>
         </div>
     </div>
