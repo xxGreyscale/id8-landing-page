@@ -108,6 +108,12 @@ button, a.btn {
     color: var(--id-black);
     font-weight: 700;
 
+    &.btn-primary.disabled, &.btn-primary:disabled  {
+        background-color: #888;
+        color: #121617;
+        cursor: not-allowed;
+    }
+
     &.no-border {
         border: solid 0px var(--id-black);
     }

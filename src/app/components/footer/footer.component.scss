@@ -1,9 +1,31 @@
 
 
 input, textarea {
-    background-color: transparent !important;
+    background-color: transparent;
     font-size: calc(.5vw + .5rem);
+
+    &:focus {
+        background-color: var(--id-white);
+        color: var(--id-black);
+    }
+
+
 }
+
+.ng-pristine {
+    background-color: transparent;
+}
+
+.ng-touched.ng-dirty.ng-valid {
+    background-color: var(--id-white);
+}
+
+.ng-touched.ng-dirty.ng-invalid {
+    background-color: #df6a6a;
+    color: var(--id-white);
+}
+
+
 footer {
     position: relative;
     bottom: 0;

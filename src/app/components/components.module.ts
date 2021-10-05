@@ -4,6 +4,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/navigation.component';
 import { SvgComponentsModule } from '../svg-components/svg-components.module';
 import { SocialsComponent } from './socials/socials.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,6 +16,9 @@ import { SocialsComponent } from './socials/socials.component';
     SocialsComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     SvgComponentsModule,
     CommonModule,
   ],

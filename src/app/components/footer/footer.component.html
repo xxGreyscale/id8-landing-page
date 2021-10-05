@@ -41,24 +41,49 @@
                 </ul>
             </div>
             <div class="col-md col-lg-4">
-                <form class="mt-n5 bg-dark contacts-form" id="contacts-form">
+                <form [formGroup]="contactusForm" (ngSubmit)="onSubmit()" class="mt-n5 bg-dark contacts-form" id="contacts-form">
                     <p>
                         Have questions about membership, our
                         services and what we do? Write to us.
                     </p>
                     <div class="form-group">
-                      <label for="">Email</label>
-                      <input type="text" class="form-control" placeholder="joe.doe@id8.space" name="" id="contact-email" aria-describedby="emailId" disabled>
-                      <small id="helpId" class="form-text text-muted">ex. joe.doe@id8.space</small>
+                      <label for="">Name</label>
+                      <input type="text" class="form-control" formControlName="name" placeholder="John Doe" name="name" id="contact-name" aria-describedby="nameId" >
+                      <small class="text-danger font-weight-bold p-2" *ngIf="name.touched && name.invalid">
+                          **Inavalid name
+                      </small>
                     </div>
 
                     <div class="form-group my-4">
-                        <label for="">Message</label>
-                        <textarea type="text" placeholder="Share your thoughts with us... (currently unavailble)" rows="3" class="form-control" name="" id="message" aria-describedby="helpId" disabled></textarea>
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" formControlName="email" placeholder="joe.doe@id8.space" name="email" id="contact-email" aria-describedby="emailId" >
+                        <small id="helpId" class="form-text text-muted">ex. joe.doe@id8.space</small>
+                        <small class="text-danger font-weight-bold p-2" *ngIf="email.touched && email.invalid">
+                            **Inavalid email
+                        </small>
                       </div>
 
-                      <button type="button" name="" id="" class="btn btn-primary no-border btn-lg btn-block">
-                          Reach us
+                    <div class="form-group my-4">
+                        <label for="">Message</label>
+                        <textarea type="text" placeholder="Share your thoughts with us... (currently unavailble)" 
+                                    rows="3" 
+                                    class="form-control" 
+                                    formControlName="message"
+                                    name="message" 
+                                    id="message" 
+                                    aria-describedby="helpId" 
+                                    ></textarea>
+                      </div>
+
+                      <button type="submit" 
+                                id="" 
+                                [disabled]="!contactusForm.valid"
+                                [ngClass]="{'bg-success': emailSent}"
+                                class="btn btn-primary no-border btn-lg btn-block">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            <span *ngIf="loading" class="sr-only">Sending mail...</span>
+                            <span *ngIf="!loading && !emailSent">Reach out</span>
+                            <span *ngIf="!loading && emailSent"><i class="bi bi-check"></i> Email sent..</span>
                       </button>
                 </form>
             </div>
