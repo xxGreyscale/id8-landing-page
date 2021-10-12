@@ -14,6 +14,7 @@ import { NewsService } from '../services/news/news.service';
 import { UserService } from '../services/user/user.service';
 import { PagesComponent } from './pages.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,11 +25,13 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ErrorPageComponent
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     ComponentsModule,    
     HttpClientModule,
     SvgComponentsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
   providers: [
     MessageService,
