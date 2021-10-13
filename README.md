@@ -1,8 +1,6 @@
 # Id8-Landing-Page
 
-Id8 space landing page for 2021
-
-# Id8LandingPage
+### Id8 space landing page 2021
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.3.
 
