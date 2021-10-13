@@ -3,6 +3,7 @@ import { Component, OnInit, SimpleChange, HostListener } from '@angular/core';
 import { NewsService } from 'src/app/services/news/news.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 declare var require: any;
 var parser = require('fast-xml-parser');
@@ -243,7 +244,7 @@ export class LandingPageComponent implements OnInit {
     console.log(data);
     if (data.email && data.password) {
       window.open(
-        `http://localhost:4200/auth/register?email=${data.email}&password=${data.password}`,
+        `${environment.baseURL}?email=${data.email}&password=${data.password}`,
         '_self'
       );
     }
