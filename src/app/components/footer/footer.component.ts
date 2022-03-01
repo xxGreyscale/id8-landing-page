@@ -71,7 +71,10 @@ export class FooterComponent implements OnInit {
     const payload = {
       name: formData.name,
       email: formData.email,
-      message: formData.message
+      message: formData.message,
+      sender: 'info@id8.space',
+      recievers: ['info@id8.space'],
+      header: 'Contact form from Dynamis'
     }
     this.emailSent = false
     this.sendEmail(payload).subscribe( response => {
